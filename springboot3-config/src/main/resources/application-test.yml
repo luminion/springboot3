@@ -1,0 +1,6 @@
+person-test:
+  name: 张三-test
+  age: 18
+  birthDay: 2010/10/10 12:12:12
+  like: true
+---

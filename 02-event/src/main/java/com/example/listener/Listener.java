@@ -4,6 +4,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.ApplicationEvent;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.event.EventListener;
+import org.springframework.core.annotation.Order;
+import org.springframework.scheduling.annotation.Async;
 
 
 /**
@@ -66,6 +68,21 @@ import org.springframework.context.event.EventListener;
 @Slf4j
 public class Listener {
 
+    /**
+     * 基于注解方法的方式接收事件
+     *
+     * spring在在创建bean后进行bean后置处理时,有个EventListenerMethodProcessor的阶段,
+     * 在该阶段中, 若检测到@EventListener注解,
+     * 会将创建org.springframework.context.event.ApplicationListenerMethodAdapter类,
+     * 并将标注了@EventListener注解的方法封装到ApplicationListenerMethodAdapter中,
+     * 实际触发事件时,调用的的时对应的ApplicationListenerMethodAdapter,然后在ApplicationListenerMethodAdapter里面是执行这个添加了注解的方法
+     * 如此该类也能通过注解的方法接收事件
+     *
+     * @param event 事件
+     * @author booty
+     */
+    @Async  // 异步执行
+    @Order(1) // 使用order注解可以指定事件订阅接收的优先级,值越小优先级越高, 默认按照类名的字典顺序(注解方式为匿名类,优先级最低)
     @EventListener
     public void onApplicationEvent(ApplicationEvent event) {
         log.debug("=====触发监听器@EventListener的注解方法监听器===event: " + event.getClass().getSimpleName());

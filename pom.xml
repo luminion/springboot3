@@ -15,6 +15,7 @@
     <modules>
         <module>01-config</module>
         <module>02-event</module>
+        <module>03-starter</module>
     </modules>
 
 </project>

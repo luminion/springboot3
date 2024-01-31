@@ -1,0 +1,27 @@
+# web容器相关配置
+server:
+  port: 80
+---
+# 静态资源规则配置
+spring:
+  # spring.web下只有静态资源(resources)和国际化(locale)相关配置
+  web:
+    # 配置国际化
+    locale: zh_CN
+    # 配置静态资源
+    resources:
+      # 开启静态资源映射
+      add-mappings: true
+      #自定义静态资源文件夹位置
+      static-locations: classpath:/static/,classpath:/public/,classpath:/resources/,classpath:/META-INF/resources/
+      cache:
+        # 静态资源缓存时间
+        period: 3600
+        # 是否使用Last-Modified响应头,对比文件修改时间(若相同返回304状态码)
+        use-last-modified: true
+        # 静态资源缓存详细合并配置, 会覆盖period配置
+        cachecontrol:
+          # 浏览器第一次请求服务器，服务器告诉浏览器此资源缓存7200秒，7200秒以内的所有此资源访问不用发给服务器请求，7200秒以后发请求给服务器
+          max-age: 7200
+          # 共享缓存
+          cache-public: true

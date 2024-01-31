@@ -1,0 +1,5 @@
+person:
+  name: 张三-配置3
+  age: 18
+  birthDay: 2010/10/10 12:12:12
+  like: true

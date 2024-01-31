@@ -1,0 +1,11 @@
+spring:
+  threads:
+    virtual:
+      # 启用虚拟线程(JDK21)
+      enabled: true
+logging:
+  level:
+    #指定包日志级别
+    com.example.listener: debug
+    #全局日志级别
+    root: info

@@ -1,0 +1,17 @@
+# mvc配置
+spring:
+  mvc:
+#    # 配置webjar访问映射路径(前后端结合, 将js等静态文件以jar包形式保存管理依赖版本, 需要添加额外依赖, 官网: https://www.webjars.org/)
+#    webjars-path-pattern: /webjars/**
+    # 配置静态资源访问映射路径(例如,访问路径为/static/a/1.jpg,则会去spring.web.resources.static-locations配置指定的路径下查找)
+    static-path-pattern: /static/**
+    # 内容协商功能配置
+    contentnegotiation:
+      # 开启基于请求参数的内容协商功能。 默认参数名：format。 默认此功能不开启
+      favor-parameter: true
+      # 指定内容协商时使用的参数名。默认是 format, 例如: /user?format=xml, 此时返回xml格式内容
+      parameter-name: format
+      # 支持的媒体类型
+      media-types:
+        # 添加自定义yaml格式支持
+        yaml: application/yaml

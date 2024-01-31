@@ -1,0 +1,34 @@
+# 自定义属性注入配置
+person:
+  name: 张三
+  age: 18
+  birthDay: 2010/10/10 12:12:12
+  like: true
+  child:
+    name: 李四
+    age: 20
+    #birthDay 推荐写为birth-day
+    birth-day: 2018/10/10
+    text: ["abc","def"]
+  dogs:
+    - name: 小黑
+      age: 3
+    - name: 小白
+      age: 2
+  cats:
+    c1:
+      name: 小蓝
+      age: 3
+    c2: {name: 小绿,age: 2} #对象也可用{}表示
+    c3:
+      #文本可以使用 | 开头，大文本写在下层，保留文本格式，换行符正确显示
+      name: |
+        使用|的文本,第一行
+        第二行
+        第三行
+    c4:
+      #文本可以使用 > 开头，大文本写在下层，折叠换行符
+      name: >
+        使用>的文本,第一行
+        第二行
+        第三行

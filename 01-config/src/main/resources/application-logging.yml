@@ -1,0 +1,31 @@
+#日志配置
+logging:
+  level:
+    #指定包日志级别
+    com.com.example: debug
+    com.example.listener: debug
+    #全局日志级别
+    root: info
+  #指定日志文件输出路径,配置后日志会产生文件
+  file:
+    #日志文件路径
+    path: logs/pathLog.log
+    #日志文件名(指定路径和文件名时,仅文件名生效)
+    name: nameLog.log
+  #默认日志框架为logback , 若需要切换, 需要先排除
+  logback:
+    rollingpolicy:
+      #日志存档的文件名格式（默认值：${LOG_FILE}.%d{yyyy-MM-dd}.%i.gz）
+      file-name-pattern: ${LOG_FILE}.%d{yyyy-MM-dd}.%i.log
+      #应用启动时是否清除以前存档（默认值：false
+      clean-history-on-start: false
+      #存档前，每个日志文件的最大大小（默认值：10MB）
+      max-file-size: 2KB
+      #日志文件被删除之前，可以容纳的最大大小（默认值：0B）。设置1GB则磁盘存储超过 1GB 日志后就会删除旧日志文件
+      total-size-cap: 1GB
+      #日志文件保存的最大天数(默认值：7)
+      max-history: 7
+#自定义配置:将logback.xml或log4j2.xml(取决于实际使用的日志框架, 默认为logback)文件放入资源路径中
+#建议在日志配置中使用-spring变量（例如，logback-spring.xml 而不是 logback.xml）。
+#如果使用标准配置文件，spring 无法完全控制日志初始化。
+#最佳实战：自己要写配置，配置文件名加上 xx-spring.xml

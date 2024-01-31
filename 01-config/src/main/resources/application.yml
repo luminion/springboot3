@@ -1,0 +1,30 @@
+# 配置文件
+#  配置文件优先级具体见applicationFileOrder.png, 其中命令行优先级最高
+#  大体如下：(后面覆盖前面),
+#  1. jar 包内的application.properties/yml
+#  2. jar 包内的application-{profile}.properties/yml
+#  3. jar 包外的application.properties/yml
+#  4. jar 包外的application-{profile}.properties/yml
+#  建议：用一种格式的配置文件。如果.properties和.yml同时存在,则.properties优先
+#  结论：包外 > 包内； 同级情况：profile配置 > application配置
+spring:
+  profiles:
+    # 指定需要启用的环境(可指定多个, 通过,分割)
+#    active: dev,test
+    active: group-all
+    # 指定默认环境(不推荐使用, 建议使用激活)
+    default: default
+    # 指定包含环境(无论激活什么环境都会生效)
+    include: config
+    # 指定分组
+    group:
+      # 指定分组名称, 添加后, active属性可指定分组名称, 该分组下的环境都会生效
+      group-all: config2,config3,logging,mvc,web
+# 使用---表示一个新的配置块 , 可以折叠, 类似c#中的region
+---
+spring:
+  threads:
+    virtual:
+      # 启用虚拟线程(JDK21)
+      enabled: true
+---

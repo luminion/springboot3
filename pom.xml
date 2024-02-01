@@ -13,9 +13,10 @@
     </properties>
 
     <modules>
-        <module>01-config</module>
-        <module>02-event</module>
-        <module>03-starter</module>
+        <module>springboot-01-config</module>
+        <module>springboot-02-event</module>
+        <module>springboot-03-starter</module>
+        <module>springboot-04-redis</module>
     </modules>
 
 </project>

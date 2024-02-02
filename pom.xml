@@ -17,6 +17,9 @@
         <module>springboot-02-event</module>
         <module>springboot-03-starter</module>
         <module>springboot-04-redis</module>
+        <module>springboot-05-doc</module>
+        <module>springboot-06-webclient</module>
+        <module>springboot-07-kafka</module>
     </modules>
 
 </project>

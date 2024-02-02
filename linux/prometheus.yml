@@ -1,0 +1,24 @@
+global:
+  scrape_interval:     15s # 设置抓取目标的频率
+  evaluation_interval: 15s # 设置规则计算的频率
+
+scrape_configs:
+  - job_name: 'prometheus' # 定义一个任务名
+    static_configs:
+      - targets: ['localhost:9090'] # 定义抓取目标，这里是 Prometheus 本身
+
+#  - job_name: 'node'
+#    static_configs:
+#      - targets: ['localhost:9100'] # Node Exporter 的地址
+#
+#  - job_name: 'mysql'
+#    static_configs:
+#      - targets: ['localhost:9104'] # MySQL Exporter 的地址
+
+  - job_name: 'redis'
+    static_configs:
+      - targets: ['redis:6379'] # Redis Exporter 的地址
+
+  - job_name: 'kafka'
+    static_configs:
+      - targets: ['kafka:9092'] # Kafka Exporter 的地址

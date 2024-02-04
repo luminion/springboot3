@@ -62,6 +62,12 @@ class SendTest {
          */
     }
 
+    @Test
+    void test3(){
+        // 发送消息
+        kafkaTemplate.send("order","order.create","订单创建了");
+    }
+
 
 
 }

@@ -20,6 +20,7 @@
         <module>springboot-05-doc</module>
         <module>springboot-06-webclient</module>
         <module>springboot-07-kafka</module>
+        <module>springboot-08-security</module>
     </modules>
 
 </project>

@@ -4,6 +4,7 @@ import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.kafka.annotation.PartitionOffset;
 import org.springframework.kafka.annotation.TopicPartition;
+import org.springframework.stereotype.Component;
 
 /**
  * 注解方式的监听器
@@ -13,7 +14,7 @@ import org.springframework.kafka.annotation.TopicPartition;
  *
  * @author booty
  */
-//@Component
+@Component
 public class AnnoListener {
 
     /**
@@ -24,11 +25,19 @@ public class AnnoListener {
      * @author booty
      */
     @KafkaListener(topics = "order", //监听的主题
-            groupId = "order-service"// 消费者组
+            groupId = "order-service1"// 消费者组(同一消费者组只会有一个实例收到消息,不同组会同时收到同一条消息)
     )
     public void listen(ConsumerRecord<String,Object> record){
-        System.out.println("收到消息："+record); //可以监听到发给kafka的新消息，以前的拿不到
+        System.out.println("1收到消息："+record); //可以监听到发给kafka的新消息，以前的拿不到
     }
+
+    @KafkaListener(topics = "order", //监听的主题
+            groupId = "order-service1"// 消费者组(同一消费者组只会有一个实例收到消息,不同组会同时收到同一条消息)
+    )
+    public void listen2(ConsumerRecord<String,Object> record){
+        System.out.println("2收到消息："+record); //可以监听到发给kafka的新消息，以前的拿不到
+    }
+
 
     /**
      * 监听指定主题的所有消息(包括历史消息)
@@ -37,7 +46,7 @@ public class AnnoListener {
      * @author booty
      */
     @KafkaListener(
-            groupId = "order-service-2", // 消费者组
+            groupId = "order-service-all", // 消费者组
             topicPartitions = {
             @TopicPartition(topic = "order", // 监听的主题
                     partitionOffsets = {

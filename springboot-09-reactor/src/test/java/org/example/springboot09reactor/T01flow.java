@@ -3,10 +3,9 @@ package org.example.springboot09reactor;
 import org.example.springboot09reactor.base.MyProcessor;
 import org.junit.jupiter.api.Test;
 
-import java.util.concurrent.Flow;
 import java.util.concurrent.SubmissionPublisher;
 
-public class T01flowTest {
+public class T01flow {
     /*
     java.util.concurrent.Flow是jdk9引入的一个接口，用于支持reactive stream
     其中有以下几个重要的接口：

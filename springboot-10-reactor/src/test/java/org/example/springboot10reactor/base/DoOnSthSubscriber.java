@@ -1,4 +1,4 @@
-package org.example.springboot09reactor.base;
+package org.example.springboot10reactor.base;
 
 import org.reactivestreams.Subscription;
 import reactor.core.publisher.BaseSubscriber;

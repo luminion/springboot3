@@ -1,6 +1,6 @@
-package org.example.springboot09reactor;
+package org.example.springboot10reactor;
 
-import org.example.springboot09reactor.base.MyProcessor;
+import org.example.springboot10reactor.base.MyProcessor;
 import org.junit.jupiter.api.Test;
 
 import java.util.concurrent.SubmissionPublisher;

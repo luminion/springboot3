@@ -1,0 +1,3 @@
+spring:
+  application:
+    name: springboot-10-reactor

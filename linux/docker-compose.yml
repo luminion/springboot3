@@ -1,10 +1,10 @@
 version: '3'
 services:
-  redis:
-    image: redis:latest
-    ports:
-      - "6379:6379"
-    restart: always
+#  redis:
+#    image: redis:latest
+#    ports:
+#      - "6379:6379"
+#    restart: always
 
   prometheus:
     image: prom/prometheus:latest
@@ -15,7 +15,7 @@ services:
       - '--config.file=/etc/prometheus/prometheus.yml'
     ports:
       - "9090:9090"
-    restart: always
+#    restart: always
 
   kafka:
     image: confluentinc/cp-kafka:latest
@@ -25,7 +25,7 @@ services:
       KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
       KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:9092
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
-    restart: always
+#    restart: always
 
   kafkaui:
     image: provectuslabs/kafka-ui:latest
@@ -34,24 +34,24 @@ services:
     environment:
       KAFKA_CLUSTERS_0_NAME: local
       KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS: kafka:9092
-    restart: always
+#    restart: always
 
   zookeeper:
     image: confluentinc/cp-zookeeper:latest
     environment:
       ZOOKEEPER_CLIENT_PORT: 2181
-    restart: always
+#    restart: always
 
   grafana:
     image: grafana/grafana:latest
     ports:
       - "3000:3000"
-    restart: always
+#    restart: always
 
-  mysql:
-    image: mysql:latest
-    environment:
-      MYSQL_ROOT_PASSWORD: root
-    ports:
-      - "3306:3306"
-    restart: always
+#  mysql:
+#    image: mysql:latest
+#    environment:
+#      MYSQL_ROOT_PASSWORD: root
+#    ports:
+#      - "3306:3306"
+#    restart: always

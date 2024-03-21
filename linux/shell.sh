@@ -37,4 +37,4 @@ sudo ufw deny 22
 sudo ufw status
 #更新规则
 sudo ufw reload
-sudo systemctl restart ufw
+sudo sta

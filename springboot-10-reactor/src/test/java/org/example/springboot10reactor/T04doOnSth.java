@@ -6,7 +6,7 @@ import reactor.core.publisher.Flux;
 
 import java.time.Duration;
 
-public class T03doOnSth {
+public class T04doOnSth {
 
     /*
     响应式编程核心：

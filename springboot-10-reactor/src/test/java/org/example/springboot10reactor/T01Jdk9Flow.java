@@ -5,9 +5,15 @@ import org.junit.jupiter.api.Test;
 
 import java.util.concurrent.SubmissionPublisher;
 
-public class T01flow {
+/**
+ * jdk9中的Flow类, 定义了发布者，订阅者，处理器等接口
+ * 响应式变成的标准规则即基于这些接口
+ *
+ * @author booty
+ */
+public class T01Jdk9Flow {
     /*
-    java.util.concurrent.Flow是jdk9引入的一个接口，用于支持reactive stream
+    java.util.concurrent.Flow是jdk9引入的一个类，用于支持reactive stream
     其中有以下几个重要的接口：
 
     Subscription:
@@ -84,8 +90,6 @@ public class T01flow {
 
         //关闭发布者(可以使用try-with-resource自动关闭)
         publisher.close();
-
-
 
     }
 

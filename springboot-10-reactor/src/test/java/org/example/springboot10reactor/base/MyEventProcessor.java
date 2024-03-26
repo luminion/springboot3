@@ -9,8 +9,7 @@ import java.util.List;
  */
 public class MyEventProcessor<T> {
     private MyEventListener<T> listener;
-
-
+    
     /**
      * 注册监听器
      *
@@ -21,11 +20,10 @@ public class MyEventProcessor<T> {
         this.listener = listener;
     }
 
-
     /**
-     * 批量处理元素
+     * 生产元素
      *
-     * @param event 事件
+     * @param event 需要生产的元素集合
      * @author booty
      */
     public void processBatch(List<T> event) {
@@ -33,7 +31,7 @@ public class MyEventProcessor<T> {
     }
 
     /**
-     * 完成处理
+     * 完成生产
      *
      * @author booty
      */

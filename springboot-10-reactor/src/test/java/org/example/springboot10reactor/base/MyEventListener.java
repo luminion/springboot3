@@ -1,7 +1,5 @@
 package org.example.springboot10reactor.base;
 
-import java.util.List;
-
 /**
  * 假设您使用基于侦听器的API。它按块处理数据并且有两个事件：（1）一块数据准备好了，（2）处理完成了 完成（终端事件）
  *
@@ -9,15 +7,15 @@ import java.util.List;
  */
 public interface MyEventListener<T> {
     /**
-     * 收到大块数据
+     * 批量生产元素
      *
-     * @param chunk 大块
+     * @param elements 需要生产的元素集合
      * @author booty
      */
-    void onDataChunk(List<T> chunk);
+    void process(T elements);
 
     /**
-     * 处理完成
+     * 完成生产
      *
      * @author booty
      */

@@ -10,54 +10,75 @@ import java.util.List;
 
 /**
  * Mono和Flux的创建
+ * spring中reactor中的流有2种,
+ * Flux: 0-N个元素
+ * Mono: 0-1个元素
+ * flux和mono创建后, 在被订阅之前, 不会有任何操作
+ * 仅仅是定义了流的操作, 只有在订阅时, 才会触发这些操作
+ *
  * 文档地址:
  * https://projectreactor.io/docs/core/release/reference/
  * @author booty
  */
-public class T02Create {
+public class T02FluxAndMono {
 
     /**
-     * spring中reactor中的流有2种,
-     * Flux: 0-N个元素
-     * Mono: 0-1个元素
-     * flux和mono创建后, 在被订阅之前, 不会有任何操作
-     * 仅仅是定义了流的操作, 只有在订阅时, 才会触发这些操作
+     * 创建mono
      *
      * @author booty
      */
     @Test
-    void test1() {
+    void createMono() {
         // mono的创建
         System.out.println("=================Mono==================");
         Mono<Integer> mono = Mono.just(1);
         mono.subscribe(System.out::println);
     }
 
+    /**
+     * 创建Flux
+     *
+     * @author booty
+     */
     @Test
-    void test2() {
+    void createFlux() {
         // 通过给定元素创建
         Flux<String> just = Flux.just("item1", "item2", "item3");
         just.subscribe(System.out::println);
     }
 
+    /**
+     * 指定范围创建Flux
+     *
+     * @author booty
+     */
     @Test
-    void test3() {
+    void createFluxFromRange() {
         // 通过给定范围创建, 包含1~5的数字
         Flux<Integer> range = Flux.range(1, 5);
         range.subscribe(System.out::println);
     }
 
+    /**
+     * 通过集合创建Flux
+     *
+     * @author booty
+     */
     @Test
-    void test4() {
+    void createFluxFromIterable() {
         // 通过给定集合创建
         List<String> iterable = Arrays.asList("foo", "bar", "foobar");
         Flux<String> fromIterable = Flux.fromIterable(iterable);
         fromIterable.subscribe(System.out::println);
     }
 
+    /**
+     * 按照指定时间间隔创建元素
+     *
+     * @author booty
+     */
     @Test
-    void test5() throws Exception {
-        // 通过给定函数创建
+    void createFluxWithInterval() throws Exception {
         //每秒产生一个从0开始的递增数字
         Flux<Long> flux = Flux.interval(Duration.ofSeconds(1));
         flux.subscribe(System.out::println);
@@ -67,11 +88,13 @@ public class T02Create {
     }
 
 
-
-
-
+    /**
+     * 日志操作
+     *
+     * @author booty
+     */
     @Test
-    void test11() throws Exception {
+    void logOperation() throws Exception {
         // mono和flux的日志操作
         Flux<Integer> range = Flux.range(1, 7);
         range.filter(i -> i > 3) //挑出>3的元素

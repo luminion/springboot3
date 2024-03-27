@@ -4,7 +4,7 @@ import org.reactivestreams.Subscription;
 import reactor.core.publisher.BaseSubscriber;
 import reactor.core.publisher.SignalType;
 
-public class DoOnSthSubscriber extends BaseSubscriber<Integer> {
+public class SampleSubscriberOnHook extends BaseSubscriber<Integer> {
     @Override
     protected void hookOnSubscribe(Subscription subscription) {
         System.out.println("订阅者和发布者绑定好了：" + subscription);

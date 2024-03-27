@@ -1,5 +1,6 @@
 package org.example.springboot10reactor;
 
+import org.example.springboot10reactor.base.SampleSubscriberOnHook;
 import org.example.springboot10reactor.base.SampleSubscriber;
 import org.junit.jupiter.api.Test;
 import reactor.core.Disposable;
@@ -20,10 +21,7 @@ public class T03Subscribe {
      * 订阅时, 可以添加消费者参数, 感知流的运行及结束
      * 同时处理时可以调用订阅后对象的dispose()方法取消订阅
      * dispose()方法不是即时的,程序生产速度快时, 可能在收到指令前继续生产多个元素
-     * 参数1,流中每个元素处理完成时调用的消费者,
-     * 参数2,流中出现异常时调用的消费者,
-     * 参数3,流正常结束时调用的消费者,
-     * 参数4,订阅时调用的消费者(可以控制背压)
+     * 方法签名:
      * subscribe();
      * subscribe(Consumer<? super T> consumer);
      * subscribe(Consumer<? super T> consumer,
@@ -35,11 +33,15 @@ public class T03Subscribe {
      *         Consumer<? super Throwable> errorConsumer,
      *         Runnable completeConsumer,
      *         Consumer<? super Subscription> subscriptionConsumer)
+     * 参数1,流中每个元素处理完成时调用的消费者,
+     * 参数2,流中出现异常时调用的消费者,
+     * 参数3,流正常结束时调用的消费者,
+     * 参数4,订阅时调用的消费者(可以控制背压)
      *
      * @author booty
      */
     @Test
-    void test2() throws Exception {
+    void subscribeWithLambda() throws Exception {
         // mono和flux的订阅和结束
         Flux<Integer> range = Flux.range(1, 9);
         Disposable subscribe = range
@@ -59,21 +61,32 @@ public class T03Subscribe {
     }
 
 
+
+
     /**
-     * 通过订阅器处理订阅
+     * 通过订阅器处理事件
      * reactor.core.publisher.BaseSubscriber
-     * 如果在订阅流时, 不希望使用lambdas的写法, 可以在订阅时传入一个通用订阅者来进行操作
-     * 可以通过编写一个继承抽象类BaseSubscriber的订阅者来进行操作
+     * 如果在订阅流时, 不希望使用lambdas表达感知doOnXxx的写法, 可以在订阅时传入一个通用订阅者来进行操作
+     * 通过编写一个继承抽象类BaseSubscriber的订阅者来进行操作
      * BaseSubscriber还提供了一个requestUnbounded()方法来切换到无界模式 （相当于request(Long.MAX_VALUE)），以及一个cancel()方法。
+     * 并针对doOnXxx事件提供了对应的hookOnXxx方法供子类重写，用于在相应的事件发生时执行相应的操作。
      * @author booty
      */
     @Test
-    void test3() throws Exception {
+    void subscribeWithBaseSubscriber() throws Exception {
         // 继承BaseSubscriber的简单订阅者
-        SampleSubscriber<Integer> ss = new SampleSubscriber<Integer>();
-        Flux<Integer> ints = Flux.range(1, 4);
-        ints.subscribe(ss);
+        SampleSubscriber<Integer> subscriber = new SampleSubscriber<>();
+        Flux<Integer> flux = Flux.range(1, 4);
+        flux.subscribe(subscriber);
     }
+
+
+
+
+
+
+
+
 
 
 

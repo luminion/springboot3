@@ -1,29 +1,27 @@
 package org.example.springboot10reactor.base;
 
-import reactor.core.publisher.FluxSink;
+import java.util.List;
 
 /**
  * 我的事件处理器
  *
  * @author booty
  */
-public class MyEventProcessor<T> implements MyEventListener<T> {
-    private FluxSink<T> sink;
+public class MyEventProcessor<T> {
+    private MyEventListener<T> listener;
 
-    public void register(FluxSink<T> sink) {
-        this.sink = sink;
+    public void register(MyEventListener<T> listener) {
+        this.listener = listener;
     }
 
-    @Override
-    public void process(T t) {
-        // 生产元素时, 通过sink向Flux中添加元素
-        sink.next(t);
+    public void processBatch(List<T> chunk) {
+        // 生产元素时, 通过监听器发出事件
+        listener.onDataChunk(chunk);
     }
 
-    @Override
     public void processComplete() {
-        // 使用用sink.complete()通知生产者结束生产
-        sink.complete();
+        // 完成生产时, 通过监听器发出事件
+        listener.processComplete();
     }
 
 

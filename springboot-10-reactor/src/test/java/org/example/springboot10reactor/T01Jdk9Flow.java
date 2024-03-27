@@ -57,7 +57,7 @@ public class T01Jdk9Flow {
 
 
     @Test
-    void test1(){
+    void flowTest(){
         // 1、定义一个发布者； 发布数据 ,SubmissionPublisher为jdk提供的默认实现；
         SubmissionPublisher<String> publisher = new SubmissionPublisher<>();
 

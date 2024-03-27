@@ -69,7 +69,7 @@ public class T04Backpressure {
      * @author booty
      */
     @Test
-    void test4() throws Exception {
+    void test2() throws Exception {
         Flux.range(1, 10)
                 .buffer(3) // 生产者每3个元素缓存一次
                 .subscribe(System.out::println);
@@ -86,7 +86,7 @@ public class T04Backpressure {
      * @author booty
      */
     @Test
-    void test5() throws Exception {
+    void test3() throws Exception {
         Flux.range(1, 5)
                 .flatMap(e -> Flux.just(e + 10,e)) // 重塑流,将原有元素自身和+10后的元素添加到新流中
                 .subscribe(System.out::println);
@@ -109,7 +109,7 @@ public class T04Backpressure {
      * @author booty
      */
     @Test
-    void test6() throws Exception {
+    void test4() throws Exception {
         Flux.range(1, 100)
                 .doOnRequest(e-> System.out.println("request = " + e)) // 感知预取的请求
                 .limitRate(10) // 限制每次处理的元素数量
@@ -125,7 +125,7 @@ public class T04Backpressure {
      * @author booty
      */
     @Test
-    void test7() throws Exception {
+    void test5() throws Exception {
         Flux.range(1, 100)
                 .doOnRequest(e -> System.out.println("request = " + e)) // 感知预取的请求
                 .limitRequest(10) // 限制总共只取10个

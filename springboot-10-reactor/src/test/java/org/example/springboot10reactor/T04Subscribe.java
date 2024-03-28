@@ -1,6 +1,5 @@
 package org.example.springboot10reactor;
 
-import org.example.springboot10reactor.base.SampleSubscriberOnHook;
 import org.example.springboot10reactor.base.SampleSubscriber;
 import org.junit.jupiter.api.Test;
 import reactor.core.Disposable;
@@ -15,7 +14,7 @@ import java.time.Duration;
  *
  * @author booty
  */
-public class T03Subscribe {
+public class T04Subscribe {
 
     /**
      * 订阅时, 可以添加消费者参数, 感知流的运行及结束

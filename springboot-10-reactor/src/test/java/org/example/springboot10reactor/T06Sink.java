@@ -1,13 +1,14 @@
 package org.example.springboot10reactor;
 
-import org.example.springboot10reactor.base.*;
+import org.example.springboot10reactor.base.MyEventListener;
+import org.example.springboot10reactor.base.MyEventListenerSingleThread;
+import org.example.springboot10reactor.base.MyEventProcessor;
 import org.junit.jupiter.api.Test;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
 import reactor.core.Disposable;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.FluxSink;
-import reactor.core.publisher.Mono;
 import reactor.core.scheduler.Schedulers;
 
 import java.util.ArrayList;
@@ -32,7 +33,7 @@ import java.util.concurrent.atomic.AtomicLong;
  *
  * @author booty
  */
-public class T05Sink {
+public class T06Sink {
 
     /**
      * Flux.generate()
@@ -59,7 +60,7 @@ public class T05Sink {
      * @author booty
      */
     @Test
-    void test1() {
+    void fluxGenerate() {
         Flux.generate(
                         () -> 0, // 初始元数据为0
                         (state, sink) -> {
@@ -90,7 +91,7 @@ public class T05Sink {
      * @author booty
      */
     @Test
-    void test2() {
+    void fluxGenerateWithCleanup() {
         // 此写法与上方相同, 只是将元素换为了AtomicLong, 并调用getAndIncrement使其自增
         Flux.generate(
                         AtomicLong::new,
@@ -141,7 +142,7 @@ public class T05Sink {
      * @author booty
      */
     @Test
-    void test3() throws Exception {
+    void fluxCreate() throws Exception {
         ExecutorService pool = Executors.newFixedThreadPool(5);
         Flux.create(sink -> {
             for (int i = 0; i < 20; i++) {
@@ -180,7 +181,7 @@ public class T05Sink {
      * @author booty
      */
     @Test
-    void test4() throws Exception {
+    void fluxCreateWithBridgeAPI() throws Exception {
 
         // 用于生产元素的生产者, 由于需要多线程,所以在外部定义
         MyEventProcessor<String> myEventProcessor = new MyEventProcessor<>();
@@ -349,7 +350,7 @@ public class T05Sink {
      * @author booty
      */
     @Test
-    void test5() throws Exception {
+    void fluxPush() throws Exception {
         MyEventProcessor<String> myEventProcessor = new MyEventProcessor<>();
         Flux<String> bridge = Flux.push(sink -> {
             myEventProcessor.register(
@@ -395,7 +396,7 @@ public class T05Sink {
      *
      */
     @Test
-    void test6() throws Exception {
+    void hybridPushPullModel() throws Exception {
         Flux.create(sink -> {
                     sink.onRequest(n -> System.out.println("FlowSink Request:"+n))
                             .onCancel(() -> System.out.println("FlowSink Cancel"))
@@ -403,20 +404,8 @@ public class T05Sink {
                 })
                 .subscribe()
 
-
-
         ;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * Flux.handle()
@@ -424,6 +413,7 @@ public class T05Sink {
      * Flux<R> handle(BiConsumer<T, SynchronousSink<R>>)
      * 参数1: 消费者, 接收T类型元素,将其转化为R类型元素
      *
+     * 该方法接近于stream流中的flatmap方法, 可以将流做转化后继续处理,并可以进行一对多或多对一的转化
      * @author booty
      */
     @Test

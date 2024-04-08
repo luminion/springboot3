@@ -1,7 +1,10 @@
 package org.example.springboot10reactor;
 
 import org.junit.jupiter.api.Test;
+import reactor.core.Disposable;
 import reactor.core.publisher.Flux;
+
+import java.util.concurrent.atomic.AtomicBoolean;
 
 /**
  * 错误处理操作符
@@ -13,7 +16,7 @@ import reactor.core.publisher.Flux;
  *
  * @author booty
  */
-public class T09Errors {
+public class T08Errors {
 
 
     /**
@@ -82,6 +85,52 @@ public class T09Errors {
                 .onErrorResume(e ->Flux.just("1", "2", "0", "3", "4"))
         ;
         flux.subscribe(System.out::println);
+    }
+
+
+    /**
+     * 使用doOnError感知错误, 使用doOnFinally做兜底处理
+     * 类似Java中的try catch finally
+     *
+     * @author booty
+     */
+    @Test
+    void doOnErrorAndDoOnFinally(){
+        Flux.just(1, 2, 0, 3, 4)
+                .map(i -> "100 / " + i + " = " + (100 / i))
+                .doOnError(e -> System.out.println("doOnError: " + e))
+                .doFinally(e-> System.out.println("doFinally: " + e))
+                .subscribe(System.out::println);
+    }
+
+
+    @Test
+    void tryWithResource() throws Exception{
+        AtomicBoolean isDisposed = new AtomicBoolean();
+        System.out.println("isDisposed: " + isDisposed);
+        Disposable disposableInstance = new Disposable() {
+            @Override
+            public void dispose() {
+                isDisposed.set(true);
+            }
+
+            @Override
+            public String toString() {
+                return "DISPOSABLE";
+            }
+        };
+        Flux<String> flux =
+                Flux.using(
+                        () -> disposableInstance, // 生成资源
+                        disposable -> Flux.just(disposable.toString()), // 处理资源
+                        Disposable::dispose // 清理释放资源
+                );
+
+        // 订阅和执行序列后，isDisposed原子的boolean 变得true。
+        flux.subscribe();
+        System.out.println("isDisposed: " + isDisposed);
+
+
     }
 
 

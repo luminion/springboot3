@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Test;
 import reactor.core.Disposable;
 import reactor.core.publisher.Flux;
 
+import java.time.Duration;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 /**
@@ -17,6 +18,38 @@ import java.util.concurrent.atomic.AtomicBoolean;
  * @author booty
  */
 public class T08Errors {
+
+
+    /**
+     * 在订阅时处理异常
+     *
+     * @author booty
+     */
+    @Test
+    void errorSubscribe() throws Exception{
+        Flux<Integer> s = Flux.just(1, 2, 0)
+                .map(v -> Math.abs(v-10)) //将V-10取绝对值
+                .map(v -> 10/v); // 当v=0时，会除10/0抛出ArithmeticException异常
+        s.subscribe(
+                value -> System.out.println("RECEIVED " + value), //正常时的逻辑
+                error -> System.err.println("CAUGHT " + error) //发生异常时的逻辑
+                , () -> System.out.println("DONE") // 最终完成后的逻辑
+        );
+
+        /*
+        上方写法实际相当于
+        try {
+            for (int i = 1; i < 11; i++) {
+                String v1 = Math.abs(i-10);
+                String v2 = 10/i;
+                System.out.println("RECEIVED " + v2);
+            }
+        } catch (Throwable t) {
+            System.err.println("CAUGHT " + t);
+        }
+         */
+
+    }
 
 
     /**
@@ -104,6 +137,13 @@ public class T08Errors {
     }
 
 
+    /**
+     * FLux.using()
+     * 创建一个资源, 在订阅时使用资源, 在完成时释放资源
+     * 类似java语法中的try-with-Resource
+     *
+     * @author booty
+     */
     @Test
     void tryWithResource() throws Exception{
         AtomicBoolean isDisposed = new AtomicBoolean();
@@ -129,39 +169,57 @@ public class T08Errors {
         // 订阅和执行序列后，isDisposed原子的boolean 变得true。
         flux.subscribe();
         System.out.println("isDisposed: " + isDisposed);
-
-
     }
 
 
     /**
-     * 在订阅时处理异常
+     * 发生错误时的终止
+     * 当发生错误时, 错误终止, 不会继续执行, 生产者后续生产的数据的订阅者将不会收到
      *
      * @author booty
      */
     @Test
-    void errorSubscribe() throws Exception{
-        Flux<Integer> s = Flux.just(1, 2, 0)
-                .map(v -> Math.abs(v-10)) //将V-10取绝对值
-                .map(v -> 10/v); // 当v=0时，会除10/0抛出ArithmeticException异常
-        s.subscribe(
-                    value -> System.out.println("RECEIVED " + value),
-                    error -> System.err.println("CAUGHT " + error)
-                );
+    void errorTerminate() throws Exception{
+        Flux<String> flux =
+                Flux.interval(Duration.ofMillis(250))
+                        .map(input -> {
+                            if (input < 3) return "tick " + input;
+                            throw new RuntimeException("boom");
+                        })
+                        .onErrorReturn("Uh oh");
 
-        /*
-        上方写法实际相当于
-        try {
-            for (int i = 1; i < 11; i++) {
-                String v1 = Math.abs(i-10);
-                String v2 = 10/i;
-                System.out.println("RECEIVED " + v2);
-            }
-        } catch (Throwable t) {
-            System.err.println("CAUGHT " + t);
-        }
-         */
+        flux.subscribe(System.out::println);
+        // 即使多了一秒钟的运行时间，也不会有更多的滴答声从interval进来。这序列确实被错误终止了。
 
+        Thread.sleep(2100);// 确保流在完成前被取消。
     }
+
+
+    /**
+     * 重试机制
+     * 当发生错误时, 重新订阅, 重新执行(会完全从头开始执行)
+     * Flux.elapsed方法主要用于测量和监控Flux流中元素发射的时间间隔，以及处理可能出现的发射延迟。
+     * 这是在构建响应式应用程序时进行性能分析和调试的有用工具
+     * 在使用Flux.elapsed时，如果没有发生错误，Flux流将不会自动完成，它将无限期地继续发射元素
+     *
+     * @author booty
+     */
+    @Test
+    void retry() throws Exception{
+        Flux.interval(Duration.ofMillis(250))
+                .map(input -> {
+                    if (input < 3) return "tick " + input;
+                    throw new RuntimeException("boom");
+                })
+                .retry(1) // 重试一次
+                .elapsed()// 测量这些元素发射的实际时间间隔
+                .subscribe(System.out::println, System.err::println);
+        Thread.sleep(2100);
+    }
+
+
+
+
+
 
 }

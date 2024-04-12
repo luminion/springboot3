@@ -2,10 +2,14 @@ package org.example.springboot10reactor;
 
 import org.junit.jupiter.api.Test;
 import reactor.core.Disposable;
+import reactor.core.Exceptions;
 import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
+import reactor.util.retry.Retry;
 
 import java.time.Duration;
 import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * 错误处理操作符
@@ -197,7 +201,7 @@ public class T08Errors {
 
     /**
      * 重试机制
-     * 当发生错误时, 重新订阅, 重新执行(会完全从头开始执行)
+     * 当发生错误时, 重新订阅, 重新执行(会完全从头开始执行,订阅者即使收到过1号元素, 也会再次收到1号元素)
      * Flux.elapsed方法主要用于测量和监控Flux流中元素发射的时间间隔，以及处理可能出现的发射延迟。
      * 这是在构建响应式应用程序时进行性能分析和调试的有用工具
      * 在使用Flux.elapsed时，如果没有发生错误，Flux流将不会自动完成，它将无限期地继续发射元素
@@ -217,6 +221,41 @@ public class T08Errors {
         Thread.sleep(2100);
     }
 
+
+    /**
+     * 按条件重试, 当产生错误时, 会按照指定的条件及重试逻辑重试
+     *
+     * @author booty
+     */
+    @Test
+    void retryWhen() throws Exception{
+        AtomicInteger errorCount = new AtomicInteger();
+        Flux<?> flux =
+                Flux.range(1,10).
+                        map(e->{
+                            if (e % 2==0) {
+                                throw new RuntimeException("error");
+                            } else {
+                                return e;
+                            }
+                        })
+                        .doOnError(e -> errorCount.incrementAndGet())
+                        .retryWhen(Retry.from(companion ->
+                                companion.map(rs -> {
+                                    if (rs.totalRetries() < 3) {
+                                        // 若重试次数小于3, 返回重试次数, 继续重试
+                                        return rs.totalRetries();
+                                    }
+                                    else {
+                                        // 若重试次数大于等于3, 抛出原始异常, (重试3次代表实际执行了4次)
+                                        throw Exceptions.propagate(rs.failure());
+                                    }
+                                })
+                        ));
+        flux.subscribe(System.out::println);
+        System.out.println("errorCount: " + errorCount);
+        Thread.sleep(5000);
+    }
 
 
 

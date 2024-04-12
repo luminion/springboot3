@@ -33,7 +33,7 @@ import java.util.concurrent.atomic.AtomicLong;
  *
  * @author booty
  */
-public class T06Sink {
+public class T06Programmatically {
 
     /**
      * Flux.generate()

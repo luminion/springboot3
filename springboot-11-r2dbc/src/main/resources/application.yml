@@ -1,5 +1,12 @@
 spring:
-  application:
-    name: springboot-10-reactor
-server:
-  port: 80
+  r2dbc:
+    username: root
+    password: root
+#    url: r2dbc:mysql://localhost:3306/r2dbc?serverTimezone=Asia/Shanghai
+    #(https://github.com/mirromutth/r2dbc-mysql)说明:r2dbc的参数不是serverTimezone, 而是 serverZone
+    url: r2dbc:mysql://localhost:3306/r2dbc?serverZoneId=Asia/Shanghai
+    name: r2dbc
+logging:
+  level:
+    org.springframework.r2dbc: debug
+

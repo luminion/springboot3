@@ -1,8 +1,8 @@
-package org.example.springboot10reactor;
+package org.example.springboot11webflux.reactor;
 
-import org.example.springboot10reactor.base.MyEventListener;
-import org.example.springboot10reactor.base.MyEventListenerSingleThread;
-import org.example.springboot10reactor.base.MyEventProcessor;
+import org.example.springboot11webflux.reactor.clazz.MyEventListener;
+import org.example.springboot11webflux.reactor.clazz.MyEventListenerSingleThread;
+import org.example.springboot11webflux.reactor.clazz.MyEventProcessor;
 import org.junit.jupiter.api.Test;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;

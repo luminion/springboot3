@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: springboot-10-reactor
+server:
+  port: 80

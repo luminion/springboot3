@@ -1,6 +1,6 @@
-package org.example.springboot10reactor;
+package org.example.springboot11webflux.reactor;
 
-import org.example.springboot10reactor.base.SampleSubscriber;
+import org.example.springboot11webflux.reactor.clazz.SampleSubscriber;
 import org.junit.jupiter.api.Test;
 import reactor.core.Disposable;
 import reactor.core.publisher.Flux;

@@ -1,4 +1,4 @@
-package org.example.springboot10reactor;
+package org.example.springboot11webflux.reactor;
 
 import org.junit.jupiter.api.Test;
 import reactor.core.publisher.Flux;

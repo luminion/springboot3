@@ -1,10 +1,9 @@
-package org.example.springboot10reactor;
+package org.example.springboot11webflux.reactor;
 
 import org.junit.jupiter.api.Test;
 import reactor.core.Disposable;
 import reactor.core.Exceptions;
 import reactor.core.publisher.Flux;
-import reactor.core.publisher.Mono;
 import reactor.util.retry.Retry;
 
 import java.time.Duration;

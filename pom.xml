@@ -21,7 +21,8 @@
         <module>springboot-06-webclient</module>
         <module>springboot-07-kafka</module>
         <module>springboot-08-security</module>
-        <module>springboot-10-reactor</module>
+        <module>springboot-10-webflux</module>
+        <module>springboot-11-r2dbc</module>
     </modules>
 
 </project>

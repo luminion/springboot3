@@ -1,6 +1,6 @@
-package org.example.springboot10reactor;
+package org.example.springboot11webflux.reactor;
 
-import org.example.springboot10reactor.base.MyProcessor;
+import org.example.springboot11webflux.reactor.clazz.MyProcessor;
 import org.junit.jupiter.api.Test;
 
 import java.util.concurrent.SubmissionPublisher;

@@ -2,6 +2,7 @@ package org.example.springboot11r2dbc;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.data.r2dbc.repository.config.EnableR2dbcRepositories;
 
 /**
  * SpringBoot 对r2dbc的自动配置
@@ -23,6 +24,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  *
  * @author booty
  */
+
 @SpringBootApplication
 public class Springboot11r2dbcApplication {
 

@@ -23,8 +23,13 @@ import static org.springframework.data.relational.core.query.Query.query;
 import static org.springframework.data.relational.core.query.Update.update;
 
 
+/**
+ * 原生r2dbc写法
+ *
+ * @author booty
+ */
 @Slf4j
-public class R2dbcTest {
+public class T01R2dbcWithOutSpringTest {
     static R2dbcEntityTemplate template;
     static MySqlConnectionFactory connectionFactory;
     @BeforeAll

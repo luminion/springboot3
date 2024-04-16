@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.ReadOnlyProperty;
+import org.springframework.data.annotation.Transient;
 import org.springframework.data.annotation.Version;
 import org.springframework.data.relational.core.mapping.Column;
 import org.springframework.data.relational.core.mapping.InsertOnlyProperty;
@@ -26,6 +27,7 @@ public class Father {
     @Version // 乐观锁
     private Long version;
     @ReadOnlyProperty // 只读属性, 该属性不会写入数据库
+//    @Transient //表示该字段在数据库中不存在
     private Person child;
 
 

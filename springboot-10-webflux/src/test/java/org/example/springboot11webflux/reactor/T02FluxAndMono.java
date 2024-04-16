@@ -110,6 +110,30 @@ public class T02FluxAndMono {
     }
 
 
+    /**
+     * 将元素按照指定的条件分组为不同list
+     *
+     *
+     * @author booty
+     */
+    @Test
+    void bufferUntilChanged() throws Exception {
+        // 缓冲操作
+        Flux.range(1,10)
+                .bufferUntilChanged(e->e%3==0)// 按照是否能被3整除, 拆分, 会按顺序指定,遇到满足条件的放一组,遇到不同条件放另一组
+                .subscribe(System.out::println);
+        /*
+        [1, 2]
+        [3]
+        [4, 5]
+        [6]
+        [7, 8]
+        [9]
+        [10]
+         */
+    }
+
+
 
 
 }

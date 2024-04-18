@@ -1,0 +1,11 @@
+server:
+  port: 80
+management:
+  endpoint:
+    health:
+      enabled: true
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: "*"

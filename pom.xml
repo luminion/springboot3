@@ -24,6 +24,7 @@
         <module>springboot-09-actuator</module>
         <module>springboot-10-webflux</module>
         <module>springboot-11-r2dbc</module>
+        <module>springboot-21-ai</module>
     </modules>
 
 </project>

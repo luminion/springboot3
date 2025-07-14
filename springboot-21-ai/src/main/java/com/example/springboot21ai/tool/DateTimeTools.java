@@ -32,10 +32,10 @@ import java.time.format.DateTimeFormatter;
  * 该注解标注的方法可以是静态的或实例的，它可以具有任何可见性（公共、受保护、包私有或私有）。
  * 包含该方法的类可以是顶层类或嵌套类，它也可以具有任何可见性（只要它在您计划实例化的地方是可访问的）
  * <p>
+ * <p>
  * 您可以为方法定义任意数量的参数（包括无参数），并且大多数类型都可以使用（原始类型、POJO、枚举、列表、数组、映射等）。
  * 类似地，方法可以返回大多数类型，包括 void。
  * 如果方法返回值，返回类型必须是一个可序列化类型，因为结果将被序列化并发送回模型
- * <p>
  * 以下类型目前不能作为工具方法使用的参数或返回类型
  * Optional
  * 异步类型( CompletableFuture 、 Future ),
@@ -45,7 +45,7 @@ import java.time.format.DateTimeFormatter;
  * @author bootystar
  */
 @Slf4j
-public class CustomTools {
+public class DateTimeTools {
 
     /**
      * 获取当前日期时间的工具
@@ -100,16 +100,6 @@ public class CustomTools {
     }
 
 
-    /**
-     * 将演员电影保存到数据库
-     * <p>
-     * 注意, 参数需要加上{@link ToolParam}注解说明,否则会报错
-     *
-     * @param actorsFilms 演员电影
-     */
-    @Tool(description = "save actor and their films to database")
-    public void saveActorsFilmsToDatabase(@ToolParam(description = "actorsFilms") ActorsFilms actorsFilms) {
-        log.info("\n---- saveActorsFilms tool was called ----, actorsFilms:\n{}", actorsFilms);
-    }
+
 
 }

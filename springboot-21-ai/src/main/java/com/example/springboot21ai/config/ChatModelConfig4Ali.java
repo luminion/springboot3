@@ -1,6 +1,5 @@
 package com.example.springboot21ai.config;
 
-import org.springframework.ai.chat.model.ChatModel;
 import org.springframework.ai.openai.OpenAiChatModel;
 import org.springframework.ai.openai.OpenAiChatOptions;
 import org.springframework.ai.openai.api.OpenAiApi;
@@ -15,7 +14,7 @@ import org.springframework.context.annotation.Configuration;
  *
  * @author bootystar
  */
-@Configuration
+@Configuration(proxyBeanMethods = false)
 public class ChatModelConfig4Ali {
 
 

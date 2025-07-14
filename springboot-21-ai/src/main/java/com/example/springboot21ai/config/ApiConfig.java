@@ -12,7 +12,7 @@ import org.springframework.context.annotation.Configuration;
  *
  * @author bootystar
  */
-@Configuration
+@Configuration(proxyBeanMethods = false)
 public class ApiConfig {
 
     /**

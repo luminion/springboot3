@@ -1,6 +1,6 @@
-package com.example.springboot21ai.ai08toolcalling;
+package com.example.springboot21ai.ai10toolcalling;
 
-import com.example.springboot21ai.tool.CustomTools;
+import com.example.springboot21ai.tool.DateTimeTools;
 import lombok.SneakyThrows;
 import org.junit.jupiter.api.Test;
 import org.springframework.ai.chat.model.ChatModel;
@@ -15,7 +15,7 @@ import org.springframework.util.ReflectionUtils;
 import java.lang.reflect.Method;
 
 /**
- * 工具规范
+ * 工具定义
  * {@link ToolDefinition}
  * 接口提供了 AI 模型所需的信息，以了解工具的可用性，包括工具名称、描述和输入模式。
  * 实际每个提供给大模型的ToolCall都被封装为ToolCallback的实现, 而每个ToolCallback都必须提供一个 ToolDefinition提供工具的信息
@@ -23,7 +23,7 @@ import java.lang.reflect.Method;
  * @author bootystar
  */
 @SpringBootTest
-public class ToolCall03ToolSpecification {
+public class ToolCall04ToolDefinition {
 
     @Autowired
     @Qualifier("qwen_plus")
@@ -68,7 +68,7 @@ public class ToolCall03ToolSpecification {
      */
     @Test
     void methodToolDefinition() {
-        Method method = ReflectionUtils.findMethod(CustomTools.class, "getCurrentDateTime");
+        Method method = ReflectionUtils.findMethod(DateTimeTools.class, "getCurrentDateTime");
         // 从方法生成 ToolDefinition
         ToolDefinition toolDefinition = ToolDefinitions.from(method);
     }
@@ -78,7 +78,7 @@ public class ToolCall03ToolSpecification {
      */
     @Test
     void methodToolDefinitionBuilder() {
-        Method method = ReflectionUtils.findMethod(CustomTools.class, "getCurrentDateTime");
+        Method method = ReflectionUtils.findMethod(DateTimeTools.class, "getCurrentDateTime");
         // 从方法生成 ToolDefinition，的builder, 并更改属性后生成ToolDefinition
         ToolDefinition toolDefinition = ToolDefinitions.builder(method)
                 .name("currentTime") // 更改工具名称

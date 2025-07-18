@@ -1,0 +1,30 @@
+spring:
+  # pg的连接信息
+#  datasource:
+#    url: jdbc:postgresql://localhost:5432/test?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true
+#    username: postgres
+#    password: root
+  ai:
+    vectorstore:
+      pgvector:
+        # 是否初始化所需模式, 默认false
+        initialize-schema: true
+        # 向量存储在pg中的模式schema名称
+        schema-name: public
+        # 向量存储表名称
+        table-name: vector_store
+        
+        #  以下项目一般无需配置
+        
+        # 最近邻搜索索引类型 包含 NONE, IVFFlat, HNSW
+        index-type: HNSW
+        # 搜索距离类型 COSINE_DISTANCE,EUCLIDEAN_DISTANCE,NEGATIVE_INNER_PRODUCT
+        distance-type: COSINE_DISTANCE
+        # 嵌入维度。如果未明确指定，PgVectorStore 将从提供的 EmbeddingModel 中检索维度,维度是在创建表时设置在嵌入列上的。如果你更改了维度，你也需要重新创建 vector_store 表
+        dimensions: 1536
+        # 删除启动时现有的 vector_store 表
+        remove-existing-vector-store-table: false
+        # 启用模式和表名验证，以确保它们是有效的现有对象
+        schema-validation: false
+        # 单批次中要处理的文档最大数量
+        max-document-batch-size: 10000 

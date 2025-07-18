@@ -1,0 +1,8 @@
+# chatanywhere
+spring:
+  ai:
+    openai:
+      api-key: ${OPENAI_API_KEY}
+      # 使用openai时, base-url配置时，要把/v1去掉，Spring会自动添加/v1/chat/completions，
+      base-url: https://api.chatanywhere.tech
+        

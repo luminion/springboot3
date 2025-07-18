@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.example</groupId>
     <artifactId>springboot3</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1</version>
     <name>springboot3</name>
     <description>springboot3</description>
     <packaging>pom</packaging>
@@ -13,18 +13,20 @@
     </properties>
 
     <modules>
-        <module>springboot-01-config</module>
-        <module>springboot-02-event</module>
-        <module>springboot-03-starter</module>
-        <module>springboot-04-redis</module>
-        <module>springboot-05-doc</module>
-        <module>springboot-06-webclient</module>
-        <module>springboot-07-kafka</module>
-        <module>springboot-08-security</module>
-        <module>springboot-09-actuator</module>
-        <module>springboot-10-webflux</module>
-        <module>springboot-11-r2dbc</module>
-        <module>springboot-21-ai</module>
+        <module>01-config</module>
+        <module>02-event</module>
+        <module>03-starter</module>
+        <module>04-redis</module>
+        <module>05-doc</module>
+        <module>06-webclient</module>
+        <module>07-kafka</module>
+        <module>08-security</module>
+        <module>09-actuator</module>
+        <module>10-webflux</module>
+        <module>11-r2dbc</module>
+        <module>12-ai</module>
+        <module>12-ai-mcp-client</module>
+        <module>12-ai-mcp-server</module>
     </modules>
 
 </project>

@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: ai-mcp-client
+  profiles:
+    active: 
+      - mcp-client
+      - openai
+---
+
+logging:
+  level:
+    org:
+      springframework:
+        ai:
+          chat:
+            client: debug
+          openai:
+            OpenAiChatModel: debug
+    io:
+      modelcontextprotocol:
+        client: debug
+        spec: debug
+      

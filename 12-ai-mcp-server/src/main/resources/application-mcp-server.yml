@@ -1,0 +1,16 @@
+spring:
+  ai:
+    mcp:
+      server:
+        name: mcp-server
+        version: 1.0.0
+        # 服务器类型
+        type: async
+        # 能力
+        capabilities:
+          tool: true
+          resource: true
+          prompt: true
+          completion: true
+    
+  

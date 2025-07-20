@@ -32,6 +32,9 @@ import java.util.Map;
  * 配置文件参考: application-vector-pg.yml
  * <p>
  * 也可以使用手动配置, 配置多个向量数据库 : {@link com.example.ai.config.VectorStoreConfig#vectorStore(JdbcTemplate, EmbeddingModel)}
+ * <p>
+ * 安装pg见pgvector.bat, 需要下载visual studio配置c++桌面开发插件, 并使用cmd 运行
+ * pgvector.sql为pg的初始化语句, 指定initialize-schema为true时会默认运行
  *
  * @author bootystar
  */
@@ -40,35 +43,21 @@ public class Vector01 {
 
     @Autowired
     private VectorStore vectorStore;
-    /*
-    pg的初始化语句, 指定initialize-schema为true时会默认运行
-    
-    CREATE EXTENSION IF NOT EXISTS vector;
-    CREATE EXTENSION IF NOT EXISTS hstore;
-    CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
-    
-    CREATE TABLE IF NOT EXISTS vector_store (
-        id uuid DEFAULT uuid_generate_v4() PRIMARY KEY,
-        content text,
-        metadata json,
-        embedding vector(1536)
-    );
-    CREATE INDEX ON vector_store USING HNSW (embedding vector_cosine_ops);
-     */
+
 
     /**
      * 新增向量数据
      */
     @Test
-    void insertVectorStore(){
+    void insertVectorStore() {
         /*
         Document 的 metadata 是用于存储文档的附加信息，它是一个键值对（Map<String, Object>）结构，
         通常用于保存文档的元数据（metadata），比如文档的来源、类型、创建时间等非内容信息
          */
         List<Document> documents = List.of(
-                new Document("Spring AI rocks!! Spring AI rocks!! Spring AI rocks!! Spring AI rocks!! Spring AI rocks!!", Map.of("type", "spring","author","bootystar")),
-                new Document("java AI wonderful!! java AI wonderful!! java AI wonderful!! java AI wonderful!! java AI wonderful!!", Map.of("type", "java","author","bootystar")),
-                new Document("python AI brilliant!! python AI brilliant!! python AI brilliant!! python AI brilliant!! python AI brilliant!!", Map.of("type", "python","author","booty")),
+                new Document("Spring AI rocks!! Spring AI rocks!! Spring AI rocks!! Spring AI rocks!! Spring AI rocks!!", Map.of("type", "spring", "author", "bootystar")),
+                new Document("java AI wonderful!! java AI wonderful!! java AI wonderful!! java AI wonderful!! java AI wonderful!!", Map.of("type", "java", "author", "bootystar")),
+                new Document("python AI brilliant!! python AI brilliant!! python AI brilliant!! python AI brilliant!! python AI brilliant!!", Map.of("type", "python", "author", "booty")),
                 new Document("The World is Big and Salvation Lurks Around the Corner"),
                 new Document("You walk forward facing the past and you turn back toward the future.", Map.of("meta2", "meta2"))
         );
@@ -76,7 +65,7 @@ public class Vector01 {
         // Add the documents to PGVector
         vectorStore.add(documents);
     }
-    
+
     /**
      * 往向量数据库插入数据,
      * 并检索
@@ -88,14 +77,11 @@ public class Vector01 {
         // print
         results.forEach(e -> System.out.println(e));
     }
-    
+
     @Test
     void removeVectorStore() {
         vectorStore.delete("");
     }
-    
-    
-    
 
 
 }

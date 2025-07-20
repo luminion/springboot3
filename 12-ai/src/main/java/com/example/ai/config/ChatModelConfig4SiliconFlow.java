@@ -1,8 +1,11 @@
 package com.example.ai.config;
 
 import com.example.ai.constant.AiConst;
+import org.springframework.ai.document.MetadataMode;
 import org.springframework.ai.openai.OpenAiChatModel;
 import org.springframework.ai.openai.OpenAiChatOptions;
+import org.springframework.ai.openai.OpenAiEmbeddingModel;
+import org.springframework.ai.openai.OpenAiEmbeddingOptions;
 import org.springframework.ai.openai.api.OpenAiApi;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
@@ -99,6 +102,51 @@ public class ChatModelConfig4SiliconFlow {
                         .build()
                 )
                 .build();
+    }
+
+    /**
+     * BAAI/bge-large-zh-v1.5 是一个大型中文文本嵌入模型，是 BGE (BAAI General Embedding) 系列的一部分
+     * 免费
+     * 该模型在 C-MTEB 基准测试中表现出色，在 31 个数据集上的平均得分为 64.53，在检索、语义相似度、文本对分类等多个任务中都取得了优异成绩。
+     * 它支持最大 512 个 token 的输入长度，适用于各种中文自然语言处理任务，如文本检索、语义相似度计算等
+     * 0.5K上下文
+     * 向量维度1024
+     *
+     * @return {@link OpenAiChatModel }
+     */
+//    @Bean(AiConst.SILICONFLOW_BAAI_BGE_LARGE_ZH_V1_5)
+    public OpenAiEmbeddingModel baai_bge_large_zh_v1_5(@Qualifier(AiConst.SILICONFLOW_API) OpenAiApi api) {
+        var embeddingOptions = OpenAiEmbeddingOptions.builder()
+                .model(AiConst.SILICONFLOW_BAAI_BGE_LARGE_ZH_V1_5)
+                .build();
+        return new OpenAiEmbeddingModel(
+                api,
+                MetadataMode.ALL,
+                embeddingOptions
+        );
+    }
+
+
+    /**
+     * BGE-M3 是一个多功能、多语言、多粒度的文本嵌入模型。
+     * 它支持三种常见的检索功能：密集检索、多向量检索和稀疏检索。该模型可以处理超过100种语言，并且能够处理从短句到长达8192个词元的长文档等不同粒度的输入。
+     * 免费
+     * 8k上下文
+     * 向量维度1024
+     * 
+     * @param api api
+     * @return {@link OpenAiEmbeddingModel }
+     */
+//    @Bean(AiConst.SILICONFLOW_BAAI_BGE_M3)
+    public OpenAiEmbeddingModel baai_bge_m3(@Qualifier(AiConst.SILICONFLOW_API) OpenAiApi api) {
+        var embeddingOptions = OpenAiEmbeddingOptions.builder()
+                .model(AiConst.SILICONFLOW_BAAI_BGE_M3)
+                .build();
+        return new OpenAiEmbeddingModel(
+                api,
+                MetadataMode.ALL,
+                embeddingOptions
+        );
     }
 
 

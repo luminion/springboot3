@@ -36,7 +36,7 @@ public class ChatClientConfig {
      * @return {@link ChatModel }
      */
     @Bean
-    public ChatModel chatModel(@Qualifier(AiConst.ALI_QWEN_MAX) OpenAiChatModel chatModel) {
+    public ChatModel chatModel(@Qualifier(AiConst.OPENAI_GPT_4O_MINI) OpenAiChatModel chatModel) {
         return chatModel;
     }
     

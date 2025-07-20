@@ -11,13 +11,12 @@ import org.springframework.boot.test.context.SpringBootTest;
  * <p>
  * ETL 流程主要有三个主要组件:
  * <p>
- * DocumentReader
+ * DocumentReader 提供来自不同来源的文档源
  * <p>
- * DocumentTransformer
+ * DocumentTransformer 作为处理工作流程的一部分，转换一批文档
  * <p>
- * DocumentWriter
+ * DocumentWriter 管理 ETL 过程的最终阶段，为文档存储做准备
  * <p>
- * Document 类内容是由 PDF 文件、文本文件和其他文档类型借助 DocumentReader 创建的
  *
  * @author bootystar
  */

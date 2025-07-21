@@ -1,4 +1,4 @@
-package com.example.ai.t12rag;
+package com.example.ai.t20rag.r03etl;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.ai.document.Document;
@@ -49,7 +49,7 @@ import java.util.Map;
  * @author bootystar
  */
 @SpringBootTest
-public class Rag31DocumentTransformerTextSplitter {
+public class Rag22Transformer01TextSplitter {
 
     @Value("classpath:rag/alibaba_java.pdf")
     private Resource resource;

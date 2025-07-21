@@ -1,4 +1,4 @@
-package com.example.ai.t12rag;
+package com.example.ai.t20rag.r02module;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.ai.chat.client.ChatClient;

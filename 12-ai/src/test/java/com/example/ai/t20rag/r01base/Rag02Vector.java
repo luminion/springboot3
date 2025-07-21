@@ -1,4 +1,4 @@
-package com.example.ai.t11vector;
+package com.example.ai.t20rag.r01base;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.ai.document.Document;
@@ -39,7 +39,7 @@ import java.util.Map;
  * @author bootystar
  */
 @SpringBootTest
-public class Vector01 {
+public class Rag02Vector {
 
     @Autowired
     private VectorStore vectorStore;

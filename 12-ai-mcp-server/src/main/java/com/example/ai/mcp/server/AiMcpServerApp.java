@@ -5,6 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
  * MCP服务器
+ * <a href="https://github.com/spring-projects/spring-ai-examples">官方示例</a>
  * <p>
  * 服务器分为2种类型, 可通过spring.ai.mcp.server.type=SYNC/ASYNC指定
  * SYNC同步服务器 - 这是使用 McpSyncServer 实现的默认服务器类型。它专为应用程序中的简单请求-响应模式而设计。
@@ -29,8 +30,6 @@ public class AiMcpServerApp {
     public static void main(String[] args) {
         SpringApplication.run(AiMcpServerApp.class, args);
     }
-    
-    
 
-    
+
 }

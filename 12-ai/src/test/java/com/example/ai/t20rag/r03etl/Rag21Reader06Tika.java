@@ -1,4 +1,4 @@
-package com.example.ai.t12rag;
+package com.example.ai.t20rag.r03etl;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.ai.reader.tika.TikaDocumentReader;
@@ -16,7 +16,7 @@ import org.springframework.core.io.Resource;
  * @author bootystar
  */
 @SpringBootTest
-public class Rag26DocumentReaderTika {
+public class Rag21Reader06Tika {
     
     @Value("classpath:rag/simple.docx")
     private Resource resource;

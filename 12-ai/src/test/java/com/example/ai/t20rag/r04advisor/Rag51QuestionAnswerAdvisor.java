@@ -1,4 +1,4 @@
-package com.example.ai.t12rag;
+package com.example.ai.t20rag.r04advisor;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.ai.chat.client.ChatClient;
@@ -11,10 +11,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 /**
- * 检索增强生成（RAG）是一种技术，有助于克服大型语言模型的局限性，这些模型在处理长文本内容、事实准确性和上下文感知方面存在困难
- * Spring AI 提供开箱即用的支持，用于常见 RAG 流程，使用 Advisor API
- * 要使用 QuestionAnswerAdvisor , 您需要将 spring-ai-advisors-vector-store 依赖项添加到您的项目
- * <p>
  * QuestionAnswerAdvisor
  * 向量数据库存储 AI 模型不知道的数据。当用户问题发送到 AI 模型时，
  * QuestionAnswerAdvisor 会查询向量数据库以获取与用户问题相关的文档
@@ -23,7 +19,7 @@ import org.springframework.boot.test.context.SpringBootTest;
  * @author bootystar
  */
 @SpringBootTest
-public class Rag01QuestionAnswerAdvisor {
+public class Rag51QuestionAnswerAdvisor {
 
     @Autowired
     private ChatClient chatClient;

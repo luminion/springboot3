@@ -1,30 +1,29 @@
-package com.example.ai.t12rag;
+package com.example.ai.t20rag.r04advisor;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.ai.chat.client.advisor.api.Advisor;
 import org.springframework.ai.rag.advisor.RetrievalAugmentationAdvisor;
 import org.springframework.ai.rag.generation.augmentation.ContextualQueryAugmenter;
+import org.springframework.ai.rag.preretrieval.query.expansion.MultiQueryExpander;
+import org.springframework.ai.rag.preretrieval.query.transformation.CompressionQueryTransformer;
 import org.springframework.ai.rag.preretrieval.query.transformation.RewriteQueryTransformer;
+import org.springframework.ai.rag.preretrieval.query.transformation.TranslationQueryTransformer;
 import org.springframework.ai.rag.retrieval.search.VectorStoreDocumentRetriever;
 import org.springframework.ai.vectorstore.VectorStore;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 /**
- * Retrieval Augmented Generation
- * 检索增强生成（RAG）是一种技术，有助于克服大型语言模型的局限性，这些模型在处理长文本内容、事实准确性和上下文感知方面存在困难
- * Spring AI 提供开箱即用的支持，用于常见 RAG 流程，使用 Advisor API
- * 要使用RetrievalAugmentationAdvisor, 您需要将 spring-ai-rag 依赖项添加到您的项目
- * <p>
  * RetrievalAugmentationAdvisor
  * Spring AI 包含一组 RAG 模块，您可以使用它们来构建自己的 RAG 工作流。
  * RetrievalAugmentationAdvisor 是一个 Advisor ，基于模块化架构，为最常见的 RAG 工作流提供开箱即用的实现
+ * 该advisor可以结合rag各个模块的transformer, retriever, augmenter等组件使用
  *
  * @author bootystar
  */
 @SpringBootTest
-public class Rag02RetrievalAugmentationAdvisor {
+public class Rag52RetrievalAugmentationAdvisor {
 
     @Autowired
     private ChatClient chatClient;
@@ -126,5 +125,63 @@ public class Rag02RetrievalAugmentationAdvisor {
         System.out.println(answer);
     }
 
+
+    /**
+     * 组合使用, 查看效果
+     * 提前设置日志级别:
+     * org.springframework.ai.rag.advisor: DEBUG
+     * 
+     */
+    @Test
+    void custom() {
+        // QueryTransformer
+        var rewriteQueryTransformer = RewriteQueryTransformer.builder()
+                .chatClientBuilder(chatClientBuilder)
+                .build();
+        var compressionQueryTransformer = CompressionQueryTransformer.builder()
+                .chatClientBuilder(chatClientBuilder)
+                .build();
+        var translationQueryTransformer = TranslationQueryTransformer.builder()
+                .chatClientBuilder(chatClientBuilder)
+                .build();
+
+        // QueryExpander
+        var multiQueryExpander = MultiQueryExpander.builder()
+                .chatClientBuilder(chatClientBuilder)
+                .build();
+
+        // DocumentRetriever
+        var vectorStoreDocumentRetriever = VectorStoreDocumentRetriever.builder()
+                .vectorStore(vectorStore)
+                .build();
+
+        // QueryAugmenter 
+        var contextualQueryAugmenter = ContextualQueryAugmenter.builder()
+                .allowEmptyContext(true)
+                .build();
+
+        Advisor advisor = RetrievalAugmentationAdvisor.builder()
+                // pre-retrieval 预检索
+                .queryTransformers(rewriteQueryTransformer,compressionQueryTransformer,translationQueryTransformer) // 查询转化器
+                .queryExpander(multiQueryExpander) // 查询扩展器
+                // retrieval 检索
+                .documentRetriever(vectorStoreDocumentRetriever) // 文档检索器
+                // post-retrieval 检索后处理
+                .documentPostProcessors((query, documents) -> documents) // 文档后处理器
+                // generation 结果生成
+                .queryAugmenter(contextualQueryAugmenter) // 查询增强器
+                .build();
+
+        String question = "which type ai is good?";
+        var response = chatClient.prompt()
+                .advisors(advisor)
+                .user(question)
+                .call()
+                .chatResponse();
+        
+   
+        System.out.println( response.getResult().getOutput().getText());
+
+    }
 
 }

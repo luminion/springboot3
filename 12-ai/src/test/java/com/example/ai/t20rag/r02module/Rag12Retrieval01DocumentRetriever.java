@@ -1,4 +1,4 @@
-package com.example.ai.t12rag;
+package com.example.ai.t20rag.r02module;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -24,19 +24,15 @@ import java.util.Map;
  * 负责查询数据系统（如向量存储）并检索最相关的文档。
  * <p>
  * 有以下2个模块:
- * <p>
  * Document Search  文档搜索
- * <p>
  * 负责从底层数据源（如搜索引擎、向量存储、数据库或知识图谱）中检索 Documents 的组件
- * <p>
  * Document Join  文档连接
- * <p>
  * 用于将基于多个查询从多个数据源检索到的文档组合成一个文档集合。在合并过程中，它还可以处理重复文档和互惠排名策略。
  *
  * @author bootystar
  */
 @SpringBootTest
-public class Rag12Retrieval {
+public class Rag12Retrieval01DocumentRetriever {
 
     @Autowired
     private VectorStore vectorStore;

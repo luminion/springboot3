@@ -1,9 +1,8 @@
-package com.example.ai.t12rag;
+package com.example.ai.t20rag.r03etl;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.ai.chat.model.ChatModel;
 import org.springframework.ai.document.Document;
-import org.springframework.ai.model.transformer.KeywordMetadataEnricher;
 import org.springframework.ai.model.transformer.SummaryMetadataEnricher;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -41,7 +40,7 @@ import java.util.List;
  * @author bootystar
  */
 @SpringBootTest
-public class Rag32DocumentTransformerContentFormatTransformerSummaryMetadataEnricher {
+public class Rag22Transformer03SummaryMetadataEnricher {
 
     @Autowired
     private ChatModel chatModel;

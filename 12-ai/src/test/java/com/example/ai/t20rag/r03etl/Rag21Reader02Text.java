@@ -1,4 +1,4 @@
-package com.example.ai.t12rag;
+package com.example.ai.t20rag.r03etl;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.ai.document.Document;
@@ -30,7 +30,7 @@ import java.util.List;
  * @author bootystar
  */
 @SpringBootTest
-public class Rag22DocumentReaderText {
+public class Rag21Reader02Text {
 
     @Value("classpath:rag/mars.txt")
     private Resource resource;

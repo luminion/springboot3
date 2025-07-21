@@ -1,4 +1,4 @@
-package com.example.ai.t12rag;
+package com.example.ai.t20rag.r02module;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.ai.chat.client.ChatClient;
@@ -24,7 +24,7 @@ import org.springframework.boot.test.context.SpringBootTest;
  * @author bootystar
  */
 @SpringBootTest
-public class Rag14Generation {
+public class Rag14Generation01QueryAugmenter {
     @Autowired
     private ChatClient chatClient;
     @Autowired

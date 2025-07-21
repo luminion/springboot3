@@ -1,4 +1,4 @@
-package com.example.ai.t12rag;
+package com.example.ai.t20rag.r03etl;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.ai.chat.model.ChatModel;
@@ -34,7 +34,7 @@ import java.util.List;
  * @author bootystar
  */
 @SpringBootTest
-public class Rag32DocumentTransformerContentFormatTransformerKeywordMetadataEnricher {
+public class Rag22Transformer02KeywordMetadataEnricher {
 
     @Autowired
     private ChatModel chatModel;

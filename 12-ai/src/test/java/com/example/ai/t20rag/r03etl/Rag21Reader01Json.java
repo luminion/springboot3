@@ -1,4 +1,4 @@
-package com.example.ai.t12rag;
+package com.example.ai.t20rag.r03etl;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.ai.reader.JsonMetadataGenerator;
@@ -26,7 +26,7 @@ import java.util.Map;
  * @author bootystar
  */
 @SpringBootTest
-public class Rag21DocumentReaderJson {
+public class Rag21Reader01Json {
     
     @Value("classpath:rag/bike.json")
     private Resource resource;

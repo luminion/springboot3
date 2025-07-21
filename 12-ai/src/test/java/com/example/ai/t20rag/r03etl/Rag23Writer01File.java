@@ -1,4 +1,4 @@
-package com.example.ai.t12rag;
+package com.example.ai.t20rag.r03etl;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.ai.document.Document;
@@ -9,6 +9,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import java.util.List;
 
 /**
+ * 将 Document 对象列表的内容写入文件
  * FileDocumentWriter 是一个 DocumentWriter 实现，它将一个 Document 对象列表的内容写入文件
  * 
  * 构造函数：
@@ -42,7 +43,7 @@ import java.util.List;
  * @author bootystar
  */
 @SpringBootTest
-public class Rag41DocumentWriter {
+public class Rag23Writer01File {
     
     
     @Test

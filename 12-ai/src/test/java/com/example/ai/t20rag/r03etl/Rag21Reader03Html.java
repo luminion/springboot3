@@ -1,4 +1,4 @@
-package com.example.ai.t12rag;
+package com.example.ai.t20rag.r03etl;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.ai.reader.jsoup.JsoupDocumentReader;
@@ -38,7 +38,7 @@ import java.util.List;
  * @author bootystar
  */
 @SpringBootTest
-public class Rag23DocumentReaderHtml {
+public class Rag21Reader03Html {
 
     @Value("classpath:rag/index.html")
     private Resource resource;

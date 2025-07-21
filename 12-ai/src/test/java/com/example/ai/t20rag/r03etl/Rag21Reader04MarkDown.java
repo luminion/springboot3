@@ -1,4 +1,4 @@
-package com.example.ai.t12rag;
+package com.example.ai.t20rag.r03etl;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.ai.reader.markdown.MarkdownDocumentReader;
@@ -29,7 +29,7 @@ import org.springframework.core.io.Resource;
  * @author bootystar
  */
 @SpringBootTest
-public class Rag24DocumentReaderMarkDown {
+public class Rag21Reader04MarkDown {
 
     @Value("classpath:rag/spring.md")
     private Resource resource;

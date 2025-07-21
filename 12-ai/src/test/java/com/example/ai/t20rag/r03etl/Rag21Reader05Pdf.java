@@ -1,4 +1,4 @@
-package com.example.ai.t12rag;
+package com.example.ai.t20rag.r03etl;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.ai.reader.ExtractedTextFormatter;
@@ -21,7 +21,7 @@ import org.springframework.core.io.Resource;
  * @author bootystar
  */
 @SpringBootTest
-public class Rag25DocumentReaderPdf {
+public class Rag21Reader05Pdf {
 
     @Value("classpath:rag/alibaba_java.pdf")
     private Resource resource;

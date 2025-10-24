@@ -8,7 +8,7 @@ import java.util.concurrent.SubmissionPublisher;
  * 作为订阅者接收数据，然后进行处理，处理完后再发布出去
  * 继承JDK的SubmissionPublisher, 以便使用其默认实现
  *
- * @author booty
+ * @author luxmixus
  */
 public class MyProcessor extends SubmissionPublisher<String> implements Flow.Processor<String,String>{
     /**

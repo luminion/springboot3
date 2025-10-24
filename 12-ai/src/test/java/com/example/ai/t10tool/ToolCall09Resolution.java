@@ -25,7 +25,7 @@ import java.util.List;
  * 2.StaticToolCallbackResolver
  * 从 ToolCallback 实例的静态列表中解析工具。当使用 Spring Boot 自动配置时，此解析器会自动配置在应用程序上下文中定义的所有类型为 ToolCallback 的 bean
  *
- * @author bootystar
+ * @author luxmixus
  * @see org.springframework.ai.tool.resolution.ToolCallbackResolver
  */
 @SpringBootTest

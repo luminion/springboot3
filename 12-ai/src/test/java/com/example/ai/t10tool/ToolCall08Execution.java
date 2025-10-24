@@ -39,7 +39,7 @@ import org.springframework.boot.test.context.SpringBootTest;
  * <p>
  * 8.AI 模型使用工具调用结果作为附加上下文生成最终响应，并通过 ChatClient 将其发送回调用方 （ChatResponse）
  *
- * @author bootystar
+ * @author luxmixus
  */
 @SpringBootTest
 public class ToolCall08Execution {

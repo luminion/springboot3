@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 /**
- * @author booty
+ * @author luxmixus
  */
 //@EnableWebMvc // 开启全面接管SpringMVC,使用此注解后, 会禁用SpringBoot的默认配置
 @Configuration

@@ -37,7 +37,7 @@ import java.util.stream.Collectors;
  * 3.若有转换器, 使用注册的任何 Spring 转换器CustomConversions来覆盖对象属性到行列和值的默认映射。
  * 4.对象的字段用于在行中的列之间进行转换。JavaBean不使用公共属性。
  * 5.如果您有一个非零参数构造函数，其构造函数参数名称与行的顶级列名称匹配，则使用该构造函数。否则，使用零参数构造函数。如果有多个非零参数构造函数，则会引发异常。
- * @author booty
+ * @author luxmixus
  */
 @SpringBootTest
 public class T03MappingTest {
@@ -53,7 +53,7 @@ public class T03MappingTest {
     /**
      * 使用默认映射
      *
-     * @author booty
+     * @author luxmixus
      */
     @Test
     void  mappingTest() throws Exception{
@@ -69,7 +69,7 @@ public class T03MappingTest {
     /**
      * 手动复杂映射
      *
-     * @author booty
+     * @author luxmixus
      */
     @Test
     void  mappingTest2() throws Exception{
@@ -109,7 +109,7 @@ public class T03MappingTest {
     /**
      * 1对多映射
      *
-     * @author booty
+     * @author luxmixus
      */
     @Test
     void one2list() throws Exception{

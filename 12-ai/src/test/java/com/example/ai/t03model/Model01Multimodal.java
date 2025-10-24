@@ -38,7 +38,7 @@ import java.util.UUID;
  * gpt-4o-audio-preview
  * <a href="https://platform.openai.com/docs/guides/audio">官网音频模型</a>
  *
- * @author bootystar
+ * @author luxmixus
  */
 @SpringBootTest
 public class Model01Multimodal {

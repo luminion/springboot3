@@ -3,7 +3,7 @@ package com.example.config.entity;
 import lombok.Data;
 
 /**
- * @author booty
+ * @author luxmixus
  */
 @Data
 public class Dog {

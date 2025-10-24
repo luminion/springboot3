@@ -16,7 +16,7 @@ import org.springframework.context.annotation.Configuration;
  * 除了系统根据配置文件配置的ChatModel，还可以自定义多个不同多模态模型的ChatModel
  * <a href="https://bailian.console.aliyun.com/tab=model#/model-market">模型列表</a>
  *
- * @author bootystar
+ * @author luxmixus
  */
 @Configuration(proxyBeanMethods = false)
 public class ChatModelConfig4Ali {

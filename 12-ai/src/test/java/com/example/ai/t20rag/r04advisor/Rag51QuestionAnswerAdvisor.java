@@ -16,7 +16,7 @@ import org.springframework.boot.test.context.SpringBootTest;
  * QuestionAnswerAdvisor 会查询向量数据库以获取与用户问题相关的文档
  * 向量数据库的响应会附加到用户文本中，为 AI 模型生成响应提供上下文
  *
- * @author bootystar
+ * @author luxmixus
  */
 @SpringBootTest
 public class Rag51QuestionAnswerAdvisor {
@@ -64,7 +64,7 @@ public class Rag51QuestionAnswerAdvisor {
         String content = chatClient.prompt()
                 .user("tell what you know about ai")
                 .advisors(questionAnswerAdvisor)
-                .advisors(a -> a.param(QuestionAnswerAdvisor.FILTER_EXPRESSION, "author == 'bootystar'")) // 过滤元数据,取作者为bootystar的文档 
+                .advisors(a -> a.param(QuestionAnswerAdvisor.FILTER_EXPRESSION, "author == 'luxmixus'")) // 过滤元数据,取作者为luxmixus的文档 
                 .call()
                 .content();
         System.out.println(content);
@@ -72,7 +72,7 @@ public class Rag51QuestionAnswerAdvisor {
         String content1 = chatClient.prompt()
                 .user("tell what you know about ai")
                 .advisors(questionAnswerAdvisor)
-                .advisors(a -> a.param(QuestionAnswerAdvisor.FILTER_EXPRESSION, "author == 'booty'")) // 过滤元数据,取作者为booty的文档
+                .advisors(a -> a.param(QuestionAnswerAdvisor.FILTER_EXPRESSION, "author == 'luxmixus'")) // 过滤元数据,取作者为luxmixus的文档
                 .call()
                 .content();
         System.out.println(content1);

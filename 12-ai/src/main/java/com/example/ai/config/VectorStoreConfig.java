@@ -9,7 +9,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 
 /**
  * 向量储存手动配置类
- * @author bootystar
+ * @author luxmixus
  */
 @Configuration(proxyBeanMethods = false)
 public class VectorStoreConfig {

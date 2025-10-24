@@ -19,7 +19,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * | 返回结果     | 任意                                     | **Mono、Flux**、任意                                               |
  * | 发送REST请求 | RestTemplate                           | WebClient                                                      |
  *
- * @author bootystar
+ * @author luxmixus
  */
 @SpringBootApplication
 public class WebFluxApp {

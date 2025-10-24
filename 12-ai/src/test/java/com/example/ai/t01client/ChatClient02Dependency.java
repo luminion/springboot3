@@ -22,7 +22,7 @@ import java.util.Scanner;
  * {@link ChatClientConfig4MultiPlatform#openAiChatClient}
  * {@link ChatClientConfig4MultiPlatform#deepSeekChatClient}
  * 实际应用中, 一般的大模型都兼容openai, 所以一般使用openAi即可
- * @author bootystar
+ * @author luxmixus
  */
 @SpringBootTest
 @Slf4j

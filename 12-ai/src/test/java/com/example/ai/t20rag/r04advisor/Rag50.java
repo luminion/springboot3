@@ -9,7 +9,7 @@ package com.example.ai.t20rag.r04advisor;
  * 
  * @see org.springframework.ai.rag.advisor.RetrievalAugmentationAdvisor
  * @see org.springframework.ai.chat.client.advisor.vectorstore
- * @author bootystar
+ * @author luxmixus
  */
 public class Rag50 {
 }

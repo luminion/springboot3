@@ -80,7 +80,7 @@ class RedisApp {
     @Test
     void test5(){
         String key = "ttl";
-        redisTemplate.opsForValue().set(key,"booty",5, TimeUnit.SECONDS);
+        redisTemplate.opsForValue().set(key,"luxmixus",5, TimeUnit.SECONDS);
         int count = 1;
         while (true){
             try {

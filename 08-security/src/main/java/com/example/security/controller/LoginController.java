@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 /**
  * 登录控制器
  *
- * @author booty
+ * @author luxmixus
  */
 @Controller
 public class LoginController {

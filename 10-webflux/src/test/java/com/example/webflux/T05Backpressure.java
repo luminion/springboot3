@@ -16,7 +16,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  * 文档地址:
  * https://projectreactor.io/docs/core/release/reference/
  *
- * @author booty
+ * @author luxmixus
  */
 public class T05Backpressure {
 
@@ -27,7 +27,7 @@ public class T05Backpressure {
      * 当一个发布者向订阅者发送数据时，如果订阅者没有准备好接收这些数据，那么消费者可以让发布者停止发送数据，
      * 当订阅者准备好接收数据时,可以通知发送者, 让发送者发送指定数量的数据
      *
-     * @author booty
+     * @author luxmixus
      */
     @Test
     void receiveAndCancel(){
@@ -66,7 +66,7 @@ public class T05Backpressure {
      * buffer操作可以将流中的元素按照指定的数量进行缓存(由生产者进行缓存,一次生产多少个元素)
      * 当消费者获取元素时, 将会获取到一个List集合, 集合中包含了指定数量的元素(若不足则全部)
      *
-     * @author booty
+     * @author luxmixus
      */
     @Test
     void bufferSubscribe() throws Exception {
@@ -83,7 +83,7 @@ public class T05Backpressure {
      * buffer是将元素缓存,未改变原元素,
      * flatMap是将元素转换为流, 可以添加额外元素, 也可以不添加
      *
-     * @author booty
+     * @author luxmixus
      */
     @Test
     void flatMapSubscribe() throws Exception {
@@ -106,7 +106,7 @@ public class T05Backpressure {
      * 和buffer的不同点:buffer是指定生产者每次生产的元素个数, limitRate是指定消费者每次请求的元素个数
      *
      *
-     * @author booty
+     * @author luxmixus
      */
     @Test
     void limitRate() throws Exception {
@@ -122,7 +122,7 @@ public class T05Backpressure {
      * 它将请求加起来最多N。如果单个request没有使总需求溢出超过N，则该特定请求将完全向上游传播。
      * 源发出该数量后，limitRequest认为序列完成，向目标端发送onComplete信号，并取消
      *
-     * @author booty
+     * @author luxmixus
      */
     @Test
     void limitRequest() throws Exception {

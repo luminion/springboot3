@@ -15,7 +15,7 @@ import org.springframework.context.ApplicationListener;
  * 4.通过@Bean将监听器加入到容器中
  * 5.在指定方法上添加@EventListener注解, 方法格式: void xxx(ApplicationEvent或ApplicationEvent的父类) (例:main启动类的中的onApplicationEvent方法)
  *
- * @author booty
+ * @author luxmixus
  */
 @Slf4j
 public class Listener3ApplicationListener implements ApplicationListener<ApplicationEvent> {

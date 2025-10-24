@@ -16,7 +16,7 @@ import java.util.List;
  * 文本嵌入用于衡量文本字符串的相关性。嵌入是一个浮点数列表（向量）。
  * 两个向量之间的距离衡量它们的相关性。距离小表示高度相关，距离大表示低度相关
  *
- * @author bootystar
+ * @author luxmixus
  */
 @SpringBootTest
 public class Model02Embedding {

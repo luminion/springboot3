@@ -20,7 +20,7 @@ import org.springframework.boot.test.context.SpringBootTest;
  * @see Rag12Retrieval01DocumentRetriever
  * @see Rag13PostRetrieval01DocumentPostProcessor
  * @see Rag14Generation01QueryAugmenter
- * @author bootystar
+ * @author luxmixus
  */
 @SpringBootTest
 public class Rag10 {

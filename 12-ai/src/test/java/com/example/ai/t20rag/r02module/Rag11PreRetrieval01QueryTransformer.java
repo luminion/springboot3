@@ -29,7 +29,7 @@ import org.springframework.boot.test.context.SpringBootTest;
  * 在使用 QueryTransformer 时，建议将 ChatClient.Builder 配置为低temperature（例如，0.0），以确保更确定和准确的结果，从而提高检索质量。
  * 大多数聊天模型的默认temperature对于优化的查询转换来说通常过高，导致检索效果降低。
  *
- * @author bootystar
+ * @author luxmixus
  */
 @SpringBootTest
 public class Rag11PreRetrieval01QueryTransformer {

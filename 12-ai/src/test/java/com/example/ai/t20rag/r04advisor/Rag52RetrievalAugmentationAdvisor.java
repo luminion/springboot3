@@ -20,7 +20,7 @@ import org.springframework.boot.test.context.SpringBootTest;
  * RetrievalAugmentationAdvisor 是一个 Advisor ，基于模块化架构，为最常见的 RAG 工作流提供开箱即用的实现
  * 该advisor可以结合rag各个模块的transformer, retriever, augmenter等组件使用
  *
- * @author bootystar
+ * @author luxmixus
  */
 @SpringBootTest
 public class Rag52RetrievalAugmentationAdvisor {
@@ -94,7 +94,7 @@ public class Rag52RetrievalAugmentationAdvisor {
 
         String answer = chatClient.prompt()
                 .advisors(retrievalAugmentationAdvisor)
-                .advisors(a -> a.param(VectorStoreDocumentRetriever.FILTER_EXPRESSION, "author == 'bootystar'")) // 运行时过滤
+                .advisors(a -> a.param(VectorStoreDocumentRetriever.FILTER_EXPRESSION, "author == 'luxmixus'")) // 运行时过滤
                 .user(question)
                 .call()
                 .content();

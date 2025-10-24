@@ -6,7 +6,7 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * @author booty
+ * @author luxmixus
  */
 @Data
 public class Child {

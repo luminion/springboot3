@@ -5,9 +5,9 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
 /**
- * @author bootystar
+ * @author luxmixus
  */
-@ConfigurationProperties(prefix = "booty.prop")  //此属性类和配置文件指定前缀绑定
+@ConfigurationProperties(prefix = "luxmixus.prop")  //此属性类和配置文件指定前缀绑定
 @Component
 @Data
 public class Prop {

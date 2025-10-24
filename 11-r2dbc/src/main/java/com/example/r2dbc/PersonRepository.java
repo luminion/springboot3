@@ -12,7 +12,7 @@ import reactor.core.publisher.Mono;
  * 人员存储库
  * 指定实体类和主键类型
  *
- * @author booty
+ * @author luxmixus
  */
 public interface PersonRepository extends ReactiveCrudRepository<Person, Long> {
 
@@ -24,7 +24,7 @@ public interface PersonRepository extends ReactiveCrudRepository<Person, Long> {
      *
      * @param firstname 名字
      * @return {@link Flux }<{@link Person }>
-     * @author booty
+     * @author luxmixus
      */
     Flux<Person> findByFirstname(String firstname);
 
@@ -33,7 +33,7 @@ public interface PersonRepository extends ReactiveCrudRepository<Person, Long> {
      *
      * @param firstname 名字
      * @return {@link Flux }<{@link Person }>
-     * @author booty
+     * @author luxmixus
      */
     Flux<Person> findByFirstname(Publisher<String> firstname);
 
@@ -43,7 +43,7 @@ public interface PersonRepository extends ReactiveCrudRepository<Person, Long> {
      * @param firstname 名字
      * @param pageable  可分页
      * @return {@link Flux }<{@link Person }>
-     * @author booty
+     * @author luxmixus
      */
     Flux<Person> findByFirstnameOrderByLastname(String firstname, Pageable pageable);
 
@@ -54,7 +54,7 @@ public interface PersonRepository extends ReactiveCrudRepository<Person, Long> {
      * @param firstname 名字
      * @param lastname  姓氏
      * @return {@link Mono }<{@link Person }>
-     * @author booty
+     * @author luxmixus
      */
     Mono<Person> findByFirstnameAndLastname(String firstname, String lastname);
 
@@ -63,7 +63,7 @@ public interface PersonRepository extends ReactiveCrudRepository<Person, Long> {
      *
      * @param lastname 姓氏
      * @return {@link Mono }<{@link Person }>
-     * @author booty
+     * @author luxmixus
      */
     Mono<Person> findFirstByLastname(String lastname);
 
@@ -78,7 +78,7 @@ public interface PersonRepository extends ReactiveCrudRepository<Person, Long> {
      *
      * @param lastname 姓氏
      * @return {@link Flux }<{@link Person }>
-     * @author booty
+     * @author luxmixus
      */
     @Query("SELECT * FROM person WHERE lastname = :lastname")
     Flux<Person> findByLastname(String lastname);
@@ -94,7 +94,7 @@ public interface PersonRepository extends ReactiveCrudRepository<Person, Long> {
      *
      * @param lastname 姓氏
      * @return {@link Mono }<{@link Person }>
-     * @author booty
+     * @author luxmixus
      */
     @Query("SELECT firstname, lastname FROM person WHERE lastname = $1")
     Mono<Person> findFirstByLastname2(String lastname);
@@ -106,7 +106,7 @@ public interface PersonRepository extends ReactiveCrudRepository<Person, Long> {
      * 表达式通过包含所有参数的数组公开方法参数。以下查询用于[0] 声明谓词值lastname（相当于:lastname参数绑定）：
      * @param lastname 姓氏
      * @return {@link Flux }<{@link Person }>
-     * @author booty
+     * @author luxmixus
      */
     @Query("SELECT * FROM person WHERE lastname = :#{[0]}")
     Flux<Person> findByQueryWithExpression(String lastname);

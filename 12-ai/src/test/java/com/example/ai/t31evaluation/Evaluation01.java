@@ -12,7 +12,7 @@ import org.springframework.boot.test.context.SpringBootTest;
  * dataList：附加到原始输入的上下文数据，例如来自 Retrieval Augmented Generation 的数据。
  * responseContent：AI 模型的响应内容（ 以 String 形式）
  *
- * @author bootystar
+ * @author luxmixus
  * @see org.springframework.ai.evaluation.Evaluator
  * @see org.springframework.ai.chat.evaluation.RelevancyEvaluator
  * @see org.springframework.ai.chat.evaluation.FactCheckingEvaluator

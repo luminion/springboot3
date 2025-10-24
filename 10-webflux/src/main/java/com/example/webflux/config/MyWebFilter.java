@@ -14,7 +14,7 @@ import reactor.core.publisher.Mono;
  * 与Interceptor的区别,
  * WebFilter注入到容器中即可, 不需要配置
  * interceptor需要配置
- * @author bootystar
+ * @author luxmixus
  */
 @Component
 public class MyWebFilter implements WebFilter {

@@ -49,7 +49,7 @@ import org.springframework.boot.test.context.SpringBootTest;
  * advisors(Advisor… advisor)
  * advisors(Consumer<AdvisorSpec> advisorSpecConsumer)
  *
- * @author bootystar
+ * @author luxmixus
  */
 @SpringBootTest
 public class ChatClient05DefaultConfig {

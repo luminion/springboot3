@@ -11,7 +11,7 @@ import java.util.concurrent.CompletableFuture;
 
 /**
  * 生产者测试
- * @author booty
+ * @author luxmixus
  */
 @SpringBootTest
 class SendTest {
@@ -21,7 +21,7 @@ class SendTest {
     /**
      * 测试1
      *
-     * @author booty
+     * @author luxmixus
      */
     @Test
     void test1(){

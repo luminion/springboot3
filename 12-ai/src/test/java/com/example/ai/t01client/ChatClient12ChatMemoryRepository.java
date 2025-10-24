@@ -35,7 +35,7 @@ import org.springframework.context.ApplicationContext;
  * 还有其他多个不常用的实现, 使用方式基本一致
  * 参考 <a href="https://docs.spring.io/spring-ai/reference/api/chat-memory.html">Spring AI ChatMemory文档</a>
  *
- * @author bootystar
+ * @author luxmixus
  */
 @SpringBootTest
 public class ChatClient12ChatMemoryRepository {

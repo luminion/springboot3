@@ -25,7 +25,7 @@ import java.util.Map;
  * 3.配置kafka模板
  *
  *
- * @author booty
+ * @author luxmixus
  */
 @Configuration
 //@EnableKafka // 高版本springboot中不需要此注解(3.0初的低版本需通过此注解开启kafka注解驱动功能)
@@ -38,7 +38,7 @@ public class ConfigFactoryTemplate {
      *
      * @param bootstrapServers 此处读取默认配置文件中的kafka.bootstrap-servers属性
      * @return {@link ProducerFactory }<{@link String }, {@link Object }>
-     * @author booty
+     * @author luxmixus
      */
     @Bean
     public ProducerFactory<String, Object> producerFactory(@Value("${spring.kafka.bootstrap-servers}") String bootstrapServers) {
@@ -55,7 +55,7 @@ public class ConfigFactoryTemplate {
      * kafka模板
      *
      * @return {@link KafkaTemplate }<{@link Integer }, {@link String }>
-     * @author booty
+     * @author luxmixus
      */
     @Bean
     public KafkaTemplate<String, Object> kafkaTemplate(ProducerFactory<String, Object> pf) {
@@ -76,7 +76,7 @@ public class ConfigFactoryTemplate {
      *
      * @param pf pf
      * @return {@link KafkaTemplate }<{@link String }, {@link byte[] }>
-     * @author booty
+     * @author luxmixus
      */
     //    @Bean
     public KafkaTemplate<String, byte[]> bytesTemplateUnable(ProducerFactory<String, byte[]> pf) {
@@ -90,7 +90,7 @@ public class ConfigFactoryTemplate {
      *
      * @param pf pf
      * @return {@link KafkaTemplate }<{@link String }, {@link byte[] }>
-     * @author booty
+     * @author luxmixus
      */
     @Bean
     public KafkaTemplate<String, byte[]> bytesTemplate(ProducerFactory pf) {

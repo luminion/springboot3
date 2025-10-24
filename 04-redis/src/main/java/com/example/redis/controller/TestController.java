@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 /**
- * @author booty
+ * @author luxmixus
  */
 @RestController
 public class TestController {

@@ -21,7 +21,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  *
  * 4、R2dbcTransactionManagerAutoConfiguration： 事务管理
  *
- * @author booty
+ * @author luxmixus
  */
 
 @SpringBootApplication

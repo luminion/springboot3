@@ -12,7 +12,7 @@ import org.springframework.web.service.invoker.HttpServiceProxyFactory;
 /**
  * webclient配置
  *
- * @author booty
+ * @author luxmixus
  */
 @Configuration
 public class WebclientConfig {
@@ -22,7 +22,7 @@ public class WebclientConfig {
      *
      * @param appCode 阿里云查询服务的code
      * @return {@code HttpServiceProxyFactory }
-     * @author booty
+     * @author luxmixus
      */
     @Bean
     public HttpServiceProxyFactory httpServiceProxyFactory(@Value("${aliyun.appcode}") String appCode){

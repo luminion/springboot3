@@ -29,7 +29,7 @@ import java.util.Map;
  * Document Join  文档连接
  * 用于将基于多个查询从多个数据源检索到的文档组合成一个文档集合。在合并过程中，它还可以处理重复文档和互惠排名策略。
  *
- * @author bootystar
+ * @author luxmixus
  */
 @SpringBootTest
 public class Rag12Retrieval01DocumentRetriever {
@@ -63,12 +63,12 @@ public class Rag12Retrieval01DocumentRetriever {
                 .similarityThreshold(0.73)
                 .topK(5)
                 .filterExpression(new FilterExpressionBuilder()
-                        .eq("author", "bootystar")
+                        .eq("author", "luxmixus")
                         .build())
                 .build();
         Query query = Query.builder()
                 .text("What is the best ai?")
-//                .context(Map.of(VectorStoreDocumentRetriever.FILTER_EXPRESSION, "author == 'booty'")) // 过滤表达式
+//                .context(Map.of(VectorStoreDocumentRetriever.FILTER_EXPRESSION, "author == 'luxmixus'")) // 过滤表达式
                 .build();
         List<Document> documents = retriever.retrieve(query);
         System.out.printf("===================%s found========================%n", documents.size());
@@ -90,11 +90,11 @@ public class Rag12Retrieval01DocumentRetriever {
                 .build();
         Query query1 = Query.builder()
                 .text("What is the best ai?")
-                .context(Map.of(VectorStoreDocumentRetriever.FILTER_EXPRESSION, "author == 'bootystar'")) // 过滤表达式
+                .context(Map.of(VectorStoreDocumentRetriever.FILTER_EXPRESSION, "author == 'luxmixus'")) // 过滤表达式
                 .build();
         Query query2 = Query.builder()
                 .text("What is the best ai?")
-                .context(Map.of(VectorStoreDocumentRetriever.FILTER_EXPRESSION, "author == 'booty'")) // 过滤表达式
+                .context(Map.of(VectorStoreDocumentRetriever.FILTER_EXPRESSION, "author == 'luxmixus'")) // 过滤表达式
                 .build();
         List<Document> documents1 = retriever.retrieve(query1);
         List<Document> documents2 = retriever.retrieve(query2);

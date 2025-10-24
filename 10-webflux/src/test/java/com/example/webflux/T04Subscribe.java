@@ -12,7 +12,7 @@ import java.time.Duration;
  * 文档地址:
  * https://projectreactor.io/docs/core/release/reference/
  *
- * @author booty
+ * @author luxmixus
  */
 public class T04Subscribe {
 
@@ -37,7 +37,7 @@ public class T04Subscribe {
      * 参数3,流正常结束时调用的消费者,
      * 参数4,订阅时调用的消费者(可以控制背压)
      *
-     * @author booty
+     * @author luxmixus
      */
     @Test
     void subscribeWithLambda() throws Exception {
@@ -69,7 +69,7 @@ public class T04Subscribe {
      * 通过编写一个继承抽象类BaseSubscriber的订阅者来进行操作
      * BaseSubscriber还提供了一个requestUnbounded()方法来切换到无界模式 （相当于request(Long.MAX_VALUE)），以及一个cancel()方法。
      * 并针对doOnXxx事件提供了对应的hookOnXxx方法供子类重写，用于在相应的事件发生时执行相应的操作。
-     * @author booty
+     * @author luxmixus
      */
     @Test
     void subscribeWithBaseSubscriber() throws Exception {

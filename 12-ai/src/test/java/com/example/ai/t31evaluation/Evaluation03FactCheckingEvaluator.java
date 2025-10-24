@@ -18,7 +18,7 @@ import java.util.Collections;
  * 
  * @see org.springframework.ai.chat.evaluation.RelevancyEvaluator
  * @see org.springframework.ai.chat.evaluation.FactCheckingEvaluator
- * @author bootystar
+ * @author luxmixus
  */
 @SpringBootTest
 public class Evaluation03FactCheckingEvaluator {

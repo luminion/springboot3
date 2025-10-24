@@ -3,7 +3,7 @@ package com.example.webflux.clazz;
 /**
  * 事件侦听器单线程
  *
- * @author booty
+ * @author luxmixus
  */
 public interface MyEventListenerSingleThread<T> extends MyEventListener<T> {
 
@@ -11,7 +11,7 @@ public interface MyEventListenerSingleThread<T> extends MyEventListener<T> {
      * 触发错误事件
      *
      * @param e e
-     * @author booty
+     * @author luxmixus
      */
     void processError(Throwable e);
 

@@ -11,7 +11,7 @@ import org.springframework.data.redis.serializer.GenericJackson2JsonRedisSeriali
  * 若需要序列化的类没有实现serializable接口，则会报错
  * 这个序列化策略的缺点是：储存在redis中的数据是乱码的,无法通过可视化工具查看
  * 此处使用json序列化策略
- * @author booty
+ * @author luxmixus
  */
 @Configuration
 public class SerializeConfig {
@@ -24,7 +24,7 @@ public class SerializeConfig {
      *
      * @param redisConnectionFactory redis连接工厂(默认为lettuce,可通过配置文件更改)
      * @return {@link RedisTemplate }<{@link Object }, {@link Object }>
-     * @author booty
+     * @author luxmixus
      */
     @Bean
     public RedisTemplate<Object, Object> redisTemplate(RedisConnectionFactory redisConnectionFactory) {

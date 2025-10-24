@@ -8,7 +8,7 @@ import org.springframework.web.reactive.result.view.Rendering;
  * Rendering对象相当于MVC中的ModelAndView
  * 用于前后端一体开发
  *
- * @author booty
+ * @author luxmixus
  */
 @Controller
 public class RenderingController {
@@ -17,7 +17,7 @@ public class RenderingController {
      * 跳转到指定首页(无首页模板对象,会报404)
      *
      * @return {@link Rendering }
-     * @author booty
+     * @author luxmixus
      */
     @GetMapping("/go2index")
     public Rendering go2index(){
@@ -28,7 +28,7 @@ public class RenderingController {
      * 跳转到百度
      *
      * @return {@link Rendering }
-     * @author booty
+     * @author luxmixus
      */
     @GetMapping("/go2baidu")
     public Rendering go2baidu(){

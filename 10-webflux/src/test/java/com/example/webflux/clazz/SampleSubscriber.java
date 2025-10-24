@@ -6,7 +6,7 @@ import reactor.core.publisher.SignalType;
 
 /**
  * 继承自BaseSubscriber，可以自定义订阅者
- * @author booty
+ * @author luxmixus
  */
 public class SampleSubscriber<T> extends BaseSubscriber<T> {
 

@@ -12,7 +12,7 @@ import java.util.Map;
 /**
  * 气象服务
  *
- * @author booty
+ * @author luxmixus
  */
 @Service
 public class WeatherService {

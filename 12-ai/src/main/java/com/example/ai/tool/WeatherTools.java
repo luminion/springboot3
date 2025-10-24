@@ -21,7 +21,7 @@ import java.util.function.Function;
  * 异步类型（例如 CompletableFuture、Future）
  * 响应式类型（例如 Flow、Mono、Flux）
  *
- * @author bootystar
+ * @author luxmixus
  */
 @Configuration(proxyBeanMethods = false)
 public class WeatherTools {

@@ -19,7 +19,7 @@ import java.lang.reflect.Method;
  * 接口提供了 AI 模型所需的信息，以了解工具的可用性，包括工具名称、描述和输入模式。
  * 实际每个提供给大模型的ToolCall都被封装为ToolCallback的实现, 而每个ToolCallback都必须提供一个 ToolDefinition提供工具的信息
  *
- * @author bootystar
+ * @author luxmixus
  */
 @SpringBootTest
 public class ToolCall04ToolDefinition {

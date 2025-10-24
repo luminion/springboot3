@@ -15,7 +15,7 @@ import java.time.Duration;
  * 1.通过META-INF/spring.factories配置
  *
  *
- * @author bootystar
+ * @author luxmixus
  */
 @Slf4j
 public class Listener1SpringApplicationRunListener implements SpringApplicationRunListener {

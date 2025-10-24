@@ -30,7 +30,7 @@ import org.springframework.boot.test.context.SpringBootTest;
  * <p>
  * 除了直接传递 ToolCallback 对象，您还可以传递一个工具名称列表，该列表将使用 ToolCallbackResolver 接口动态解析
  *
- * @author bootystar
+ * @author luxmixus
  * @see DateTimeTools 根据注解创建的工具
  */
 @SpringBootTest

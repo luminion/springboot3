@@ -15,7 +15,7 @@ import org.springframework.context.ConfigurableApplicationContext;
  * 2.通过main主程序对象application.addInitializers();方法添加
  * 3.通过main主程序流式构造器SpringApplicationBuilder.initializers();方法添加
  *
- * @author booty
+ * @author luxmixus
  */
 @Slf4j
 public class Listener4ApplicationContextInitializer implements ApplicationContextInitializer<ConfigurableApplicationContext> {

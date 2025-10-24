@@ -14,7 +14,7 @@ import java.util.List;
  * 该类提供较为封装不完全的， 原始的调用方式
  * 使用较为麻烦，但操作性较高
  * 
- * @author bootystar
+ * @author luxmixus
  */
 @SpringBootTest
 public class Prompt03OpenAiApi {

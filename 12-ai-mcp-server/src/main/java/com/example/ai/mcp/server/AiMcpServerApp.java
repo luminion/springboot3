@@ -22,7 +22,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * Spring MVC (服务器发送事件) - spring-ai-starter-mcp-server-webmvc
  * Spring WebFlux (响应式 SSE) - spring-ai-starter-mcp-server-webflux
  *
- * @author bootystar
+ * @author luxmixus
  */
 @SpringBootApplication
 public class AiMcpServerApp {

@@ -31,7 +31,7 @@ import java.util.concurrent.atomic.AtomicLong;
  * 文档地址:
  * https://projectreactor.io/docs/core/release/reference/
  *
- * @author booty
+ * @author luxmixus
  */
 public class T06Programmatically {
 
@@ -57,7 +57,7 @@ public class T06Programmatically {
      * SynchronousSink的生产是同步和逐个的，这意味着next()方法每次回调/回传调用最多一次。
      * 然后您可以额外调用error(Throwable)或complete()来抛出异常或结束流
      *
-     * @author booty
+     * @author luxmixus
      */
     @Test
     void fluxGenerate() {
@@ -88,7 +88,7 @@ public class T06Programmatically {
      * 并获取到生产者最后一次生产的元数据
      * 在状态包含数据库连接或其他资源的情况下 需要在流程结束时处理，清理函数可以执行关闭连接等操作
      *
-     * @author booty
+     * @author luxmixus
      */
     @Test
     void fluxGenerateWithCleanup() {
@@ -139,7 +139,7 @@ public class T06Programmatically {
      * the requests would never be performed due to the loop starving the same thread they are supposed to run from.
      * Use the subscribeOn(Scheduler, false) variant: requestOnSeparateThread = false will use the Scheduler thread for the create and still let data flow by performing request in the original thread
      *
-     * @author booty
+     * @author luxmixus
      */
     @Test
     void fluxCreate() throws Exception {
@@ -178,7 +178,7 @@ public class T06Programmatically {
      *
      *
      * 此外Mono也有一个create生成器MonoSink的创建,但该创建器不允许多次调用。它将在第一次之后丢弃所有信号
-     * @author booty
+     * @author luxmixus
      */
     @Test
     void fluxCreateWithBridgeAPI() throws Exception {
@@ -258,7 +258,7 @@ public class T06Programmatically {
      * ERROR策略： 当下游无法跟上上游数据的发送速度时，上游会发出一个异常信号，通常是IllegalStateException。
      *            这种策略相当于告诉系统，如果无法按照预期处理数据，那么就会停止整个流程。
      *
-     * @author booty
+     * @author luxmixus
      */
     @Test
     void overflowStrategyTest() throws Exception {
@@ -347,7 +347,7 @@ public class T06Programmatically {
      *
      *
      *
-     * @author booty
+     * @author luxmixus
      */
     @Test
     void fluxPush() throws Exception {
@@ -414,7 +414,7 @@ public class T06Programmatically {
      * 参数1: 消费者, 接收T类型元素,将其转化为R类型元素
      *
      * 该方法接近于stream流中的flatmap方法, 可以将流做转化后继续处理,并可以进行一对多或多对一的转化
-     * @author booty
+     * @author luxmixus
      */
     @Test
     void test8() throws Exception {

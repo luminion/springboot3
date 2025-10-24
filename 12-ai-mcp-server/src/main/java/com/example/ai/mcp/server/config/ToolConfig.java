@@ -18,7 +18,7 @@ import org.springframework.context.annotation.Configuration;
  * 3.ToolCallbackProvider bean
  * 工具按名称去重，使用每个工具只保留第一个定义
  *
- * @author bootystar
+ * @author luxmixus
  */
 @Configuration(proxyBeanMethods = false)
 public class ToolConfig {

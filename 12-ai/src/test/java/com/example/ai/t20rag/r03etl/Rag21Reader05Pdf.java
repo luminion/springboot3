@@ -18,7 +18,7 @@ import org.springframework.core.io.Resource;
  * 使用前需要引入依赖
  * spring-ai-pdf-document-reader
  *
- * @author bootystar
+ * @author luxmixus
  */
 @SpringBootTest
 public class Rag21Reader05Pdf {

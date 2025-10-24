@@ -3,7 +3,7 @@ package com.example.ai.entity;
 import java.util.List;
 
 /**
- * @author bootystar
+ * @author luxmixus
  */
 public record ActorsFilms(String name, int age , List<Movie> movies){
 }

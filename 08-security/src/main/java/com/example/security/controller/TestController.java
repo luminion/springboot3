@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 /**
  * hello控制器
  *
- * @author booty
+ * @author luxmixus
  */
 @RestController
 public class TestController {

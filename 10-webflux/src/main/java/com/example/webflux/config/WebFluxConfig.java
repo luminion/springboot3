@@ -9,7 +9,7 @@ import org.springframework.web.reactive.config.WebFluxConfigurer;
  * WebFluxConfigurer相当于MVC中的WebMvcConfigurer
  * 用于配置网络请求的基础支持,如跨域策略等
  *
- * @author booty
+ * @author luxmixus
  */
 @Configuration
 public class WebFluxConfig implements WebFluxConfigurer {

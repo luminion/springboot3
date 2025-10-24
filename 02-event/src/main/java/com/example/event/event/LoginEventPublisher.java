@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
  * 实际上, ApplicationContext实现了ApplicationEventPublisher接口,
  * 所以实际编码时, 可以直接注入ApplicationEventPublisher或ApplicationContext, 并使用publishEvent方法发布事件
  *
- * @author booty
+ * @author luxmixus
  */
 @Component
 public class LoginEventPublisher implements ApplicationEventPublisherAware {

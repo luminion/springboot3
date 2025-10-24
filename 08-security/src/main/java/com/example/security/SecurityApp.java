@@ -19,7 +19,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  *
  * 官方文档链接
  * https://docs.spring.io/spring-security/reference/
- * @author bootystar
+ * @author luxmixus
  */
 @SpringBootApplication
 public class SecurityApp {

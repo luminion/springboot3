@@ -35,7 +35,7 @@ import java.util.List;
  * 使用前需要引入依赖
  * spring-ai-jsoup-document-reader
  *
- * @author bootystar
+ * @author luxmixus
  */
 @SpringBootTest
 public class Rag21Reader03Html {

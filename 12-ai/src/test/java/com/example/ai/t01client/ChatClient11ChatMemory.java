@@ -40,7 +40,7 @@ import java.util.stream.IntStream;
  * 将消息窗口维护到指定的最大大小。当消息数超过最大值时，将删除较旧的消息，同时保留系统消息。默认窗口大小为 20 封邮件
  * 如果添加了新的系统消息，则所有以前的系统消息都将从内存中删除。
  * 这可确保最新的上下文始终可用于会话，同时保持内存使用受限
- * @author bootystar
+ * @author luxmixus
  */
 @SpringBootTest
 public class ChatClient11ChatMemory {

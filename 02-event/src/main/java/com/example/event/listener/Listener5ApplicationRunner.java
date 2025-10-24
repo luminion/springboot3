@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
  * 配置方式:
  * 1.通过@Bean将监听器加入到容器中
  *
- * @author booty
+ * @author luxmixus
  */
 @Slf4j
 @Component

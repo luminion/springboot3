@@ -12,7 +12,7 @@ import org.springframework.boot.test.context.SpringBootTest;
  * DocumentTransformer 作为处理工作流程的一部分，转换一批文档
  * DocumentWriter 管理 ETL 过程的最终阶段，为文档存储做准备
  *
- * @author bootystar
+ * @author luxmixus
  */
 @SpringBootTest
 public class Rag20Etl {

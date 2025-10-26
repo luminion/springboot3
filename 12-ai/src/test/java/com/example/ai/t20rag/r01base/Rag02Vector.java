@@ -36,7 +36,7 @@ import java.util.Map;
  * 安装pg见pgvector.bat, 需要下载visual studio配置c++桌面开发插件, 并使用cmd 运行
  * pgvector.sql为pg的初始化语句, 指定initialize-schema为true时会默认运行
  *
- * @author luxmixus
+ * @author luminion
  */
 @SpringBootTest
 public class Rag02Vector {
@@ -55,9 +55,9 @@ public class Rag02Vector {
         通常用于保存文档的元数据（metadata），比如文档的来源、类型、创建时间等非内容信息
          */
         List<Document> documents = List.of(
-                new Document("Spring AI rocks!! Spring AI rocks!! Spring AI rocks!! Spring AI rocks!! Spring AI rocks!!", Map.of("type", "spring", "author", "luxmixus")),
-                new Document("java AI wonderful!! java AI wonderful!! java AI wonderful!! java AI wonderful!! java AI wonderful!!", Map.of("type", "java", "author", "luxmixus")),
-                new Document("python AI brilliant!! python AI brilliant!! python AI brilliant!! python AI brilliant!! python AI brilliant!!", Map.of("type", "python", "author", "luxmixus")),
+                new Document("Spring AI rocks!! Spring AI rocks!! Spring AI rocks!! Spring AI rocks!! Spring AI rocks!!", Map.of("type", "spring", "author", "luminion")),
+                new Document("java AI wonderful!! java AI wonderful!! java AI wonderful!! java AI wonderful!! java AI wonderful!!", Map.of("type", "java", "author", "luminion")),
+                new Document("python AI brilliant!! python AI brilliant!! python AI brilliant!! python AI brilliant!! python AI brilliant!!", Map.of("type", "python", "author", "luminion")),
                 new Document("The World is Big and Salvation Lurks Around the Corner"),
                 new Document("You walk forward facing the past and you turn back toward the future.", Map.of("meta2", "meta2"))
         );

@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
 /**
- * @author luxmixus
+ * @author luminion
  */
 @Component
 @ConfigurationProperties(prefix = "person1") //和配置文件person前缀的所有配置进行绑定

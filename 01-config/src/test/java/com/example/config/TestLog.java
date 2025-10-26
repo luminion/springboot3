@@ -14,7 +14,7 @@ import java.util.stream.Stream;
 
 /**
  * 启动前需要先注释掉多余的启动类
- * @author luxmixus
+ * @author luminion
  * @since 2023/12/26
  */
 @SpringBootTest

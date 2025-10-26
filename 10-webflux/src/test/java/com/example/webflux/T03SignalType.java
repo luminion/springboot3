@@ -36,7 +36,7 @@ public class T03SignalType {
      *   6、doOnTerminate    发送取消/异常信号中断了流
      *   7、doOnCancel       流被取消
      *   8、doOnDiscard      流中元素被忽略的时候
-     * @author luxmixus
+     * @author luminion
      */
     @Test
     void differenceBetweenDoOnNextAndDoOnEach() {
@@ -58,7 +58,7 @@ public class T03SignalType {
     /**
      * 打印doOnXxx的触发时机
      *
-     * @author luxmixus
+     * @author luminion
      */
     @Test
     void signalTypePrint() throws Exception {

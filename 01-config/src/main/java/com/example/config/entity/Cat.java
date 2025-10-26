@@ -3,7 +3,7 @@ package com.example.config.entity;
 import lombok.Data;
 
 /**
- * @author luxmixus
+ * @author luminion
  */
 @Data
 public class Cat {

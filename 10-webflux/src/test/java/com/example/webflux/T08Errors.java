@@ -18,7 +18,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  * 2.通过onError()方法处理
  *
  *
- * @author luxmixus
+ * @author luminion
  */
 public class T08Errors {
 
@@ -26,7 +26,7 @@ public class T08Errors {
     /**
      * 在订阅时处理异常
      *
-     * @author luxmixus
+     * @author luminion
      */
     @Test
     void errorSubscribe() throws Exception{
@@ -59,7 +59,7 @@ public class T08Errors {
      * 处理链中间错误的替代方法，例如错误处理运算符
      * 当产生错误时的替代返回方案, 并终止流
      *
-     * @author luxmixus
+     * @author luminion
      */
     @Test
     void onErrorReturn() {
@@ -75,7 +75,7 @@ public class T08Errors {
      * 返回替代值, 未满足时抛出异常
      *
      *
-     * @author luxmixus
+     * @author luminion
      */
     @Test
     void onErrorReturn2() {
@@ -92,7 +92,7 @@ public class T08Errors {
      * onErrorComplete()
      * 发生异常时, 捕获并忽略异常,并直接结束流(正常结束)
      *
-     * @author luxmixus
+     * @author luminion
      */
     @Test
     void onErrorComplete() {
@@ -112,7 +112,7 @@ public class T08Errors {
      * 当未发生异常时fallback不会做处理,
      * 当发生异常时, 使用fallback策略返回新的生产者继续生产数据
      *
-     * @author luxmixus
+     * @author luminion
      */
     @Test
     void onErrorResume() {
@@ -128,7 +128,7 @@ public class T08Errors {
      * 使用doOnError感知错误, 使用doOnFinally做兜底处理
      * 类似Java中的try catch finally
      *
-     * @author luxmixus
+     * @author luminion
      */
     @Test
     void doOnErrorAndDoOnFinally(){
@@ -145,7 +145,7 @@ public class T08Errors {
      * 创建一个资源, 在订阅时使用资源, 在完成时释放资源
      * 类似java语法中的try-with-Resource
      *
-     * @author luxmixus
+     * @author luminion
      */
     @Test
     void tryWithResource() throws Exception{
@@ -179,7 +179,7 @@ public class T08Errors {
      * 发生错误时的终止
      * 当发生错误时, 错误终止, 不会继续执行, 生产者后续生产的数据的订阅者将不会收到
      *
-     * @author luxmixus
+     * @author luminion
      */
     @Test
     void errorTerminate() throws Exception{
@@ -205,7 +205,7 @@ public class T08Errors {
      * 这是在构建响应式应用程序时进行性能分析和调试的有用工具
      * 在使用Flux.elapsed时，如果没有发生错误，Flux流将不会自动完成，它将无限期地继续发射元素
      *
-     * @author luxmixus
+     * @author luminion
      */
     @Test
     void retry() throws Exception{
@@ -224,7 +224,7 @@ public class T08Errors {
     /**
      * 按条件重试, 当产生错误时, 会按照指定的条件及重试逻辑重试
      *
-     * @author luxmixus
+     * @author luminion
      */
     @Test
     void retryWhen() throws Exception{

@@ -40,7 +40,7 @@ import java.util.List;
  * metadataMode 参数允许控制现有元数据如何被整合到写入内容中
  * 这个处理器特别适用于调试或创建文档集合的可读输出
  * 
- * @author luxmixus
+ * @author luminion
  */
 @SpringBootTest
 public class Rag23Writer01File {

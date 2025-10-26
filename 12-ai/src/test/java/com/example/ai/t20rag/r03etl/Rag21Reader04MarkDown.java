@@ -26,7 +26,7 @@ import org.springframework.core.io.Resource;
  * 使用前需要引入依赖
  * spring-ai-markdown-document-reader
  *
- * @author luxmixus
+ * @author luminion
  */
 @SpringBootTest
 public class Rag21Reader04MarkDown {

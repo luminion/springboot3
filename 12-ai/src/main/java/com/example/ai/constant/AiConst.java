@@ -1,7 +1,7 @@
 package com.example.ai.constant;
 
 /**
- * @author luxmixus
+ * @author luminion
  */
 public class AiConst {
     

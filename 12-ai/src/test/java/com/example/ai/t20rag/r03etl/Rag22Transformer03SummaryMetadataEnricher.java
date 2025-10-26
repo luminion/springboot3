@@ -37,7 +37,7 @@ import java.util.List;
  * 这种增强器特别适用于创建上下文感知的摘要，允许更好地理解序列中文档之间的关系
  * MetadataMode 参数允许控制现有元数据如何被整合到摘要生成过程中
  *
- * @author luxmixus
+ * @author luminion
  */
 @SpringBootTest
 public class Rag22Transformer03SummaryMetadataEnricher {

@@ -23,7 +23,7 @@ import java.util.Map;
  * 它使用提供的 JsonMetadataGenerator （如果没有提供，则使用一个空对象）生成元数据
  * 它创建一个 Document 对象，其中包含提取的内容和元数据。
  * 
- * @author luxmixus
+ * @author luminion
  */
 @SpringBootTest
 public class Rag21Reader01Json {
@@ -59,7 +59,7 @@ public class Rag21Reader01Json {
     void readJsonWithKeysAndMetadata() {
         // 元数据
         JsonMetadataGenerator metadataGenerator = jsonMap -> {
-            var author = Map.of("author", "luxmixus");
+            var author = Map.of("author", "luminion");
             return Map.of("metadata", author);
         };
         JsonReader jsonReader = new JsonReader(

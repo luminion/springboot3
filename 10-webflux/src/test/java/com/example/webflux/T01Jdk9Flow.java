@@ -9,7 +9,7 @@ import java.util.concurrent.SubmissionPublisher;
  * jdk9中的Flow类, 定义了发布者，订阅者，处理器等接口
  * 响应式变成的标准规则即基于这些接口
  *
- * @author luxmixus
+ * @author luminion
  */
 public class T01Jdk9Flow {
     /*

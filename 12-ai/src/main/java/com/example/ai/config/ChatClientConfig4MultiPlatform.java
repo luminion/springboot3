@@ -16,7 +16,7 @@ import java.util.Scanner;
  * 1.多平台聊天客户端
  * 2.多模型聊天客户端
  *
- * @author luxmixus
+ * @author luminion
  */
 @Slf4j
 @Configuration(proxyBeanMethods = false)

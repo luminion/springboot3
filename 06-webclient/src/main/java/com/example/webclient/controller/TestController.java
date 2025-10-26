@@ -12,7 +12,7 @@ import reactor.core.publisher.Mono;
 /**
  * 测试控制器
  *
- * @author luxmixus
+ * @author luminion
  */
 @RestController
 public class TestController {
@@ -27,7 +27,7 @@ public class TestController {
      * 查询天气
      * @param city 城市
      * @return {@code Mono<String> }
-     * @author luxmixus
+     * @author luminion
      */
     @GetMapping("/weather")
     public Mono<String> weather(@RequestParam("city") String city){
@@ -38,7 +38,7 @@ public class TestController {
      * 查询物流
      * @param number 快递单号
      * @return {@code Mono<String> }
-     * @author luxmixus
+     * @author luminion
      */
     @GetMapping("/express")
     public Mono<String> express(@RequestParam("number") String number){

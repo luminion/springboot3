@@ -21,7 +21,7 @@ import java.util.concurrent.Executors;
  * empty()：这种Sink只会向其订阅者播放终止信号（错误或完成），但仍可视为Mono<T>（注意这里的泛型类型<T>）
  *
  *
- * @author luxmixus
+ * @author luminion
  */
 public class T09Sink {
 
@@ -40,7 +40,7 @@ public class T09Sink {
      * Sink通常是更好的选择。
      *
      *
-     * @author luxmixus
+     * @author luminion
      */
     @Test
     void createSink() throws Exception{

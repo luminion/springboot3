@@ -3,7 +3,7 @@ package com.example.redis.entitiy;
 import lombok.Data;
 
 /**
- * @author luxmixus
+ * @author luminion
  */
 @Data
 public class User {

@@ -19,7 +19,7 @@ import org.springframework.boot.test.context.SpringBootTest;
  * 此评估器通过确定 AI 模型的响应是否与用户对检索到的上下文的输入相关，帮助评估 RAG 流的质量
  * @see org.springframework.ai.chat.evaluation.RelevancyEvaluator
  * @see org.springframework.ai.chat.evaluation.FactCheckingEvaluator
- * @author luxmixus
+ * @author luminion
  */
 @SpringBootTest
 public class Evaluation02RelevancyEvaluator {

@@ -37,7 +37,7 @@ import java.util.concurrent.TimeUnit;
  * `publishOn()`用于指定下游操作的调度器，
  * 而`subscribeOn()`则用于指定上游操作的调度器。
  * 这些方法的使用可以帮助开发者更好地控制任务的执行策略，从而提高响应式程序的性能和效率。
- * @author luxmixus
+ * @author luminion
  */
 public class T07Scheduler {
 
@@ -46,7 +46,7 @@ public class T07Scheduler {
      * 相反，大多数运算符继续在当前线程中工作执行前一个运算符。
      * 除非指定，否则最顶层的运算符（源） 将在当前Thread上运行
      *
-     * @author luxmixus
+     * @author luminion
      */
     @Test
     void threadTest() throws Exception{
@@ -69,7 +69,7 @@ public class T07Scheduler {
      * 可以使用Schedulers.newXXX()创建各种调度程序类型的newXXX方法
      * 例如，Schedulers.newParallel(name1)创建一个新的并行 调度程序名称为name1
      *
-     * @author luxmixus
+     * @author luminion
      */
     @Test
     void scheduler() throws Exception {
@@ -90,7 +90,7 @@ public class T07Scheduler {
      * 它允许你在不同的线程或上下文中执行操作，以便更好地控制异步任务的执行
      *
      *
-     * @author luxmixus
+     * @author luminion
      */
     @Test
     void publicOn() throws Exception{
@@ -143,7 +143,7 @@ public class T07Scheduler {
      * 然后，publishOn会将其之后的操作符转移到另一个指定的调度器上执行。
      * 这种组合使用可以实现复杂的线程切换和任务执行策略，以适应不同的性能需求和资源管理
      *
-     * @author luxmixus
+     * @author luminion
      */
     @Test
     void subscribeOn() throws Exception{

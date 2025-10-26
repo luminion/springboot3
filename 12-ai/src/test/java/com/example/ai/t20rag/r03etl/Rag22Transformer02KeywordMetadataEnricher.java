@@ -31,7 +31,7 @@ import java.util.List;
  * 生成的关键词以逗号分隔的字符串形式返回
  * 这种增强器特别适用于提高文档的可搜索性，以及为文档生成标签或类别
  *
- * @author luxmixus
+ * @author luminion
  */
 @SpringBootTest
 public class Rag22Transformer02KeywordMetadataEnricher {

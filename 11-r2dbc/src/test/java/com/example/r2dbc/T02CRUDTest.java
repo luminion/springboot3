@@ -16,7 +16,7 @@ import static org.springframework.data.relational.core.query.Query.query;
 /**
  * 使用spring 注入R2dbcEntityTemplate
  * 并测试CRUD
- * @author luxmixus
+ * @author luminion
  */
 @SpringBootTest
 public class T02CRUDTest {
@@ -35,7 +35,7 @@ public class T02CRUDTest {
      * 一个重要的限制是，保存实体后，该实体不能再是新的。请注意，实体是否是新的是实体状态的一部分。
      * 对于自动增量列，这种情况会自动发生，因为 ID 是由 Spring Data 使用 ID 列中的值设置的。
      *
-     * @author luxmixus
+     * @author luminion
      */
     @Test
     void idPolicy() throws Exception{

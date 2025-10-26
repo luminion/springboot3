@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Configuration;
 /**
  * 引入mcp客户端之后, 
  * 可以通过toolCallbackProvider获取mcp服务的工具
- * @author luxmixus
+ * @author luminion
  */
 @Configuration(proxyBeanMethods = false)
 public class Config {

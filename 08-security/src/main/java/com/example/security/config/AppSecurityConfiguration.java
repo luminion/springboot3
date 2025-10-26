@@ -20,7 +20,7 @@ import org.springframework.security.web.SecurityFilterChain;
  * 3、自定义用户信息查询规则：UserDetailsService
  * 4、开启方法级别的精确权限控制：@EnableMethodSecurity + @PreAuthorize("hasAuthority('test_permission')")
  *
- * @author luxmixus
+ * @author luminion
  */
 @EnableMethodSecurity
 @Configuration
@@ -32,7 +32,7 @@ public class AppSecurityConfiguration {
      *
      * @param http http
      * @return {@code SecurityFilterChain }
-     * @author luxmixus
+     * @author luminion
      */
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
@@ -58,7 +58,7 @@ public class AppSecurityConfiguration {
      *
      * @param passwordEncoder 密码编码器 ,此处需要向容器中注入一个密码编码器, 否则会报错java.lang.IllegalArgumentException: There is no PasswordEncoder mapped for the id "null
      * @return {@code UserDetailsService }
-     * @author luxmixus
+     * @author luminion
      */
     @Bean
     public UserDetailsService userDetailsService(PasswordEncoder  passwordEncoder){

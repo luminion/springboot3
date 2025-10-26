@@ -46,7 +46,7 @@ import java.util.Map;
  * 原始文档中的内容格式化器（如果已设置）也会被复制到派生片段中，如果 copyContentFormatter 被设置为 true （默认行为）。
  * 这种分割器特别适用于为大语言模型准备文本，这些模型有令牌限制，确保每个片段都在模型的处理能力范围内。
  *
- * @author luxmixus
+ * @author luminion
  */
 @SpringBootTest
 public class Rag22Transformer01TextSplitter {

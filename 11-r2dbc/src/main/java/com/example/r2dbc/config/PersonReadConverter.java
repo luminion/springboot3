@@ -8,7 +8,7 @@ import org.springframework.data.convert.ReadingConverter;
 /**
  * 使用显式转换器覆盖映射, 手动的Person读取转化器
  *
- * @author luxmixus
+ * @author luminion
  */
 @ReadingConverter
 public class PersonReadConverter implements Converter<Row, Person> {

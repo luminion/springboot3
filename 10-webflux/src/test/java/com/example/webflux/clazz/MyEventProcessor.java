@@ -5,7 +5,7 @@ import java.util.List;
 /**
  * 我的事件处理器
  *
- * @author luxmixus
+ * @author luminion
  */
 public class MyEventProcessor<T> {
     private MyEventListener<T> listener;

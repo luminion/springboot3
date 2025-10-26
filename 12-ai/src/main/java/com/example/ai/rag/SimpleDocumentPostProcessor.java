@@ -9,7 +9,7 @@ import java.util.List;
 
 /**
  * DocumentPostProcessor的简单实现
- * @author luxmixus
+ * @author luminion
  */
 @Slf4j
 public class SimpleDocumentPostProcessor implements DocumentPostProcessor {

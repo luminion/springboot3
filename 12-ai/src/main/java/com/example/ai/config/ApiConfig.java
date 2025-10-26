@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Configuration;
  * 当需要使用多个平台不同模型时可以配置
  * 也可以跳过该配置， 直接使用不同平台的ChatModel
  *
- * @author luxmixus
+ * @author luminion
  */
 @Configuration(proxyBeanMethods = false)
 public class ApiConfig {

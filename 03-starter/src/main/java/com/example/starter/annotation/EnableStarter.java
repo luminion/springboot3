@@ -15,7 +15,7 @@ import java.lang.annotation.*;
  * 在springboot3版本低于3时,对应配置文件为METE-INF/spring.factories,
  * 并在配置文件中指定org.springframework.boot.autoconfigure.EnableAutoConfiguration=xxx
  *
- * @author luxmixus
+ * @author luminion
  */
 
 @Retention(RetentionPolicy.RUNTIME)

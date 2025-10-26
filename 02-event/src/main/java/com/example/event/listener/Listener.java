@@ -62,7 +62,7 @@ import org.springframework.scheduling.annotation.Async;
  *     以前步骤都正确执行，代表容器running。
  *
  *
- * @author luxmixus
+ * @author luminion
  */
 @Configuration
 @Slf4j
@@ -79,7 +79,7 @@ public class Listener {
      * 如此该类也能通过注解的方法接收事件
      *
      * @param event 事件
-     * @author luxmixus
+     * @author luminion
      */
     @Async  // 异步执行
     @Order(1) // 使用order注解可以指定事件订阅接收的优先级,值越小优先级越高, 默认按照类名的字典顺序(注解方式为匿名类,优先级最低)

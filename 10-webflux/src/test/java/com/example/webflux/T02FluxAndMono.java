@@ -18,14 +18,14 @@ import java.util.List;
  *
  * 文档地址:
  * https://projectreactor.io/docs/core/release/reference/
- * @author luxmixus
+ * @author luminion
  */
 public class T02FluxAndMono {
 
     /**
      * 创建mono
      *
-     * @author luxmixus
+     * @author luminion
      */
     @Test
     void createMono() {
@@ -38,7 +38,7 @@ public class T02FluxAndMono {
     /**
      * 创建Flux
      *
-     * @author luxmixus
+     * @author luminion
      */
     @Test
     void createFlux() {
@@ -50,7 +50,7 @@ public class T02FluxAndMono {
     /**
      * 指定范围创建Flux
      *
-     * @author luxmixus
+     * @author luminion
      */
     @Test
     void createFluxFromRange() {
@@ -62,7 +62,7 @@ public class T02FluxAndMono {
     /**
      * 通过集合创建Flux
      *
-     * @author luxmixus
+     * @author luminion
      */
     @Test
     void createFluxFromIterable() {
@@ -75,7 +75,7 @@ public class T02FluxAndMono {
     /**
      * 按照指定时间间隔创建元素
      *
-     * @author luxmixus
+     * @author luminion
      */
     @Test
     void createFluxWithInterval() throws Exception {
@@ -91,7 +91,7 @@ public class T02FluxAndMono {
     /**
      * 日志操作
      *
-     * @author luxmixus
+     * @author luminion
      */
     @Test
     void logOperation() throws Exception {
@@ -114,7 +114,7 @@ public class T02FluxAndMono {
      * 将元素按照指定的条件分组为不同list
      *
      *
-     * @author luxmixus
+     * @author luminion
      */
     @Test
     void bufferUntilChanged() throws Exception {

@@ -21,7 +21,7 @@ import org.springframework.boot.test.context.SpringBootTest;
  * <p>
  * 一个用于根据用户查询和检索到的文档生成最终响应的组件。
  *
- * @author luxmixus
+ * @author luminion
  */
 @SpringBootTest
 public class Rag14Generation01QueryAugmenter {

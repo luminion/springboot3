@@ -14,7 +14,7 @@ import org.springframework.boot.BootstrapRegistryInitializer;
  * 3.通过main主程序流式构造器SpringApplicationBuilder.addBootstrapRegistryInitializer();方法添加
  *
  * 使用场景：进行密钥校对授权(例如程序使用期限一年,从服务器请求验证,验证不通过,退出程序)。
- * @author luxmixus
+ * @author luminion
  */
 @Slf4j
 public class Listener2BootstrapRegistryInitializer implements BootstrapRegistryInitializer {

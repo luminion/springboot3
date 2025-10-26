@@ -51,7 +51,7 @@ import java.util.List;
  * 返回一个 ChatClientResponse 对象的 Flux, 其中包含 ChatResponse 对象和 ChatClient 执行上下文，使您能够访问在执行顾问程序期间使用的其他数据（例如，在 RAG 流中检索的相关文档）
  * 流失输出返回需要结合BeanOutputConverter使用, 详见{@link Prompt02StructuredOutput}
  *
- * @author luxmixus
+ * @author luminion
  */
 @SpringBootTest
 public class ChatClient04Prompt {

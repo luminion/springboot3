@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
  * 全局异常处理程序, 和 @ControllerAdvice 一样，但是 @RestControllerAdvice 是针对 @RestController 的，
  * 和MVC基本无区别
  *
- * @author luxmixus
+ * @author luminion
  */
 @RestControllerAdvice
 public class GlobalExceptionHandler {

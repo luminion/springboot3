@@ -20,7 +20,7 @@ import java.util.Map;
  * 为此，可以将每个主题的NewTopic 通过@Bean添加到应用程序上下文。
  * 版本2.3引入了一个新的类TopicBuilder，使创建这样的bean更方便
  *
- * @author luxmixus
+ * @author luminion
  */
 @Configuration
 public class ConfigTopic {
@@ -34,7 +34,7 @@ public class ConfigTopic {
      * 1.createOrModifyTopics()方法用于创建或修改主题
      * 2.describeTopics()方法用于获取主题的详细信息
      * @return {@link KafkaAdmin }
-     * @author luxmixus
+     * @author luminion
      */
 //    @Bean
     public KafkaAdmin admin(@Value("${spring.kafka.bootstrap-servers}")String bootstrapServers) {
@@ -65,7 +65,7 @@ public class ConfigTopic {
      * topic3
      *
      * @return {@link NewTopic }
-     * @author luxmixus
+     * @author luminion
      */
 //    @Bean
     public NewTopic topic3() {

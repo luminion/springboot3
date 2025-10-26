@@ -1,7 +1,7 @@
 package com.example.ai.entity;
 
 /**
- * @author luxmixus
+ * @author luminion
  */
 public record Customer (Long id , String name, String email){
 }

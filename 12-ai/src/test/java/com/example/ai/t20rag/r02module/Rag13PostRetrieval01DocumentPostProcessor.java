@@ -23,7 +23,7 @@ import java.util.List;
  * <p>
  * 该接口无默认实现, 需要自行编写
  * 
- * @author luxmixus
+ * @author luminion
  */
 @SpringBootTest
 public class Rag13PostRetrieval01DocumentPostProcessor {
@@ -40,7 +40,7 @@ public class Rag13PostRetrieval01DocumentPostProcessor {
     void documentPostProcessor() {
         Query query = Query.builder()
                 .text("What is the best ai?")
-//                .context(Map.of(VectorStoreDocumentRetriever.FILTER_EXPRESSION, "author == 'luxmixus'")) // 过滤表达式
+//                .context(Map.of(VectorStoreDocumentRetriever.FILTER_EXPRESSION, "author == 'luminion'")) // 过滤表达式
                 .build();
 
     

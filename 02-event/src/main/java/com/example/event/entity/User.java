@@ -5,7 +5,7 @@ import lombok.experimental.Accessors;
 
 /**
  * 用户实体类
- * @author luxmixus
+ * @author luminion
  */
 @Data
 @Accessors(chain = true)

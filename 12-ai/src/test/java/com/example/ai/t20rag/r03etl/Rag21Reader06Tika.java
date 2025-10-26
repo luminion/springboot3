@@ -13,7 +13,7 @@ import org.springframework.core.io.Resource;
  * 使用前需要引入依赖
  * spring-ai-tika-document-reader
  *
- * @author luxmixus
+ * @author luminion
  */
 @SpringBootTest
 public class Rag21Reader06Tika {

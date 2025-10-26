@@ -26,7 +26,7 @@ import static org.springframework.data.relational.core.query.Update.update;
 /**
  * 原生r2dbc写法
  *
- * @author luxmixus
+ * @author luminion
  */
 @Slf4j
 public class T01R2dbcWithOutSpringTest {
@@ -57,7 +57,7 @@ public class T01R2dbcWithOutSpringTest {
      * 4.将结果转换为实体
      * 该过程和jdbc的基础操作基本类似
      *
-     * @author luxmixus
+     * @author luminion
      */
     @Test
     void queryByConnection() throws Exception{
@@ -93,7 +93,7 @@ public class T01R2dbcWithOutSpringTest {
      * Spring Data R2DBC 使用R2dbcDialect抽象来确定绑定标记、分页支持以及底层驱动程序本机支持的数据类型
      * 所有终端方法始终返回Publisher表示所需操作的类型。实际的报表在订阅后发送到数据库
      *
-     * @author luxmixus
+     * @author luminion
      */
     @Test
     void r2dbcEntityTemplate() {
@@ -206,7 +206,7 @@ public class T01R2dbcWithOutSpringTest {
      * 您可以使用Criteria with SELECT、UPDATE、 和DELETE查询。
      *
      *
-     * @author luxmixus
+     * @author luminion
      */
     @Test
     void queryByCriteria() throws Exception {
@@ -230,7 +230,7 @@ public class T01R2dbcWithOutSpringTest {
     /**
      * 插入数据
      *
-     * @author luxmixus
+     * @author luminion
      */
     @Test
     void insertTest() throws Exception{
@@ -249,7 +249,7 @@ public class T01R2dbcWithOutSpringTest {
     /**
      * 更新数据
      *
-     * @author luxmixus
+     * @author luminion
      */
     @Test
     void updateTest() throws Exception{
@@ -271,7 +271,7 @@ public class T01R2dbcWithOutSpringTest {
     /**
      * 删除
      *
-     * @author luxmixus
+     * @author luminion
      */
     @Test
     void deleteTest() throws Exception{

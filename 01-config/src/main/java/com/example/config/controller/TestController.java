@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 
 /**
- * @author luxmixus
+ * @author luminion
  */
 @RestController
 @RequestMapping("/test")
@@ -21,7 +21,7 @@ public class TestController {
      *
      * @param name 姓名
      * @return {@code String }
-     * @author luxmixus
+     * @author luminion
      */
     @RequestMapping("/test")
     public String test(String name){
@@ -75,7 +75,7 @@ public class TestController {
      * @param request 请求
      * @param path    路径
      * @return {@code String }
-     * @author luxmixus
+     * @author luminion
      */
     @GetMapping("/a*/b?/{p1:[a-f]+}")
     public String test2(HttpServletRequest request, @PathVariable("p1") String path) {
@@ -102,7 +102,7 @@ public class TestController {
      * http://localhost/test/test3?format=yaml
      *
      * @return {@code Person }
-     * @author luxmixus
+     * @author luminion
      */
     @GetMapping("/test3")
     public Person test3() {
@@ -119,7 +119,7 @@ public class TestController {
      *
      * @param person 人
      * @return {@code Person }
-     * @author luxmixus
+     * @author luminion
      */
     @GetMapping("/test4")
     public Person test4(@RequestBody Person person) {

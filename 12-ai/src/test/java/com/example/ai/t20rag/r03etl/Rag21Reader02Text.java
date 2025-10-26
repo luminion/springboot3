@@ -27,7 +27,7 @@ import java.util.List;
  * TextReader 将整个文件内容读入内存，因此可能不适合非常大的文件
  * 如果您需要将文本拆分为更小的块，您可以在读取文档后使用文本拆分器 TokenTextSplitter
  *
- * @author luxmixus
+ * @author luminion
  */
 @SpringBootTest
 public class Rag21Reader02Text {

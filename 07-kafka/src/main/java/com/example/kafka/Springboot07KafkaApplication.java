@@ -23,7 +23,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  *    副本：  备份机制，每个小分区的数据都有备份
  *    主题： topics； 消息是发送给某个主题
  *
- * @author luxmixus
+ * @author luminion
  */
 @SpringBootApplication
 public class Springboot07KafkaApplication {

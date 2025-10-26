@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Configuration;
 import java.util.List;
 
 /**
- * @author luxmixus
+ * @author luminion
  */
 @Configuration(proxyBeanMethods = false)
 public class PromptConfig {

@@ -21,7 +21,7 @@ import java.util.UUID;
 
 /**
  * 音频生成模型
- * @author luxmixus
+ * @author luminion
  */
 @SpringBootTest
 public class Model04Audio {

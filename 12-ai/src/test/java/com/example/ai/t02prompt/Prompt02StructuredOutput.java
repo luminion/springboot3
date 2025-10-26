@@ -45,7 +45,7 @@ import java.util.Map;
  * ListOutputConverter - 上级抽象AbstractConversionServiceOutputConverter
  * 并包含为逗号分隔的列表输出量身定制的 FormatProvider 实现。转换器实现使用提供的 ConversionService 将模型文本输出转换为 java.util.List
  *
- * @author luxmixus
+ * @author luminion
  */
 @SpringBootTest
 public class Prompt02StructuredOutput {

@@ -13,7 +13,7 @@ import org.springframework.data.r2dbc.mapping.event.BeforeSaveCallback;
  *
  * Spring Data Commons 2.2 中引入了实体回调 API。这是应用实体修改的推荐方法。现有的存储特定信息ApplicationEvents仍会在调用可能注册的实例之前EntityCallback发布
  *
- * @author luxmixus
+ * @author luminion
  */
 public class T05Callback {
 

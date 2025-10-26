@@ -17,7 +17,7 @@ import org.springframework.boot.test.context.SpringBootTest;
  * 手动创建不同模型的实例
  * 可以指定多个不同云平台,不同的模型 
  * 
- * @author luxmixus
+ * @author luminion
  */
 @Slf4j
 @SpringBootTest

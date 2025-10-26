@@ -19,7 +19,7 @@ import java.util.concurrent.TimeUnit;
  * 如果需要使用进一步的封装, 则需要使用ChatClient, ChatClient需要自己通过ChatModel创建
  * {@link ChatClientConfig#chatClient}
  *
- * @author luxmixus
+ * @author luminion
  */
 @SpringBootTest
 class ChatClient01 {

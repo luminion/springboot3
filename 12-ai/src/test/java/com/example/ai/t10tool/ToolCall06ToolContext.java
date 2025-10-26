@@ -14,7 +14,7 @@ import java.util.Map;
  * Spring AI 支持通过 ToolContext API 将额外的上下文信息传递给工具。
  * 此功能允许您提供额外的用户提供的数据，这些数据可与 AI 模型传递的工具参数一起在工具执行中使用
  * ToolContext 中提供的任何数据都不会发送到 AI 模型
- * @author luxmixus
+ * @author luminion
  */
 @SpringBootTest
 public class ToolCall06ToolContext {

@@ -8,7 +8,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 /**
  * 音频生成模型
- * @author luxmixus
+ * @author luminion
  */
 @SpringBootTest
 public class Model05Moderation {

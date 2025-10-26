@@ -7,7 +7,7 @@ import reactor.core.publisher.Mono;
 /**
  * express api
  *
- * @author luxmixus
+ * @author luminion
  */
 public interface ExpressApi {
 
@@ -22,7 +22,7 @@ public interface ExpressApi {
      * @param type   快递类型，不传将自动识别
      * @param mobile 查顺丰时需要手机号后四位
      * @return {@code Mono<String> }
-     * @author luxmixus
+     * @author luminion
      */
     @GetExchange(url = "https://express3.market.alicloudapi.com/express3",accept = "application/json")
     Mono<String> queryExpress(@RequestParam("number") String number, @RequestParam("type") String type, @RequestParam("mobile") String mobile);

@@ -39,7 +39,7 @@ import org.springframework.context.ApplicationContext;
  *
  *        主配置和激活的配置都生效，优先以激活的配置为准
  *
- * @author luxmixus
+ * @author luminion
  * @since 2023/12/26
  */
 @SpringBootTest

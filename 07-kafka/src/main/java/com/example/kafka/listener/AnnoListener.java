@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
  * bean包装在MessagingMessageListenerAdapter中，
  * 该适配器配置有各种功能，例如用于转换数据的转换器，如果需要，以匹配方法参数。
  *
- * @author luxmixus
+ * @author luminion
  */
 @Component
 public class AnnoListener {
@@ -22,7 +22,7 @@ public class AnnoListener {
      * 使配置后只会监听到发给kafka的新消息，以前的拿不到
      *
      * @param record 记录
-     * @author luxmixus
+     * @author luminion
      */
     @KafkaListener(topics = "order", //监听的主题
             groupId = "order-service1"// 消费者组(同一消费者组只会有一个实例收到消息,不同组会同时收到同一条消息)
@@ -43,7 +43,7 @@ public class AnnoListener {
      * 监听指定主题的所有消息(包括历史消息)
      *
      * @param record 记录
-     * @author luxmixus
+     * @author luminion
      */
     @KafkaListener(
             groupId = "order-service-all", // 消费者组

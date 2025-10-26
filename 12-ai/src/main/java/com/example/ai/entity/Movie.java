@@ -1,7 +1,7 @@
 package com.example.ai.entity;
 
 /**
- * @author luxmixus
+ * @author luminion
  */
 public record Movie(String name , int year) {
 }

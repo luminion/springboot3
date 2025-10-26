@@ -13,7 +13,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 /**
- * @author luxmixus
+ * @author luminion
  */
 @Configuration
 public class DocConfig {
@@ -37,7 +37,7 @@ public class DocConfig {
      * 此处的分组设置是为了在swagger-ui中显示不同的分组(右上角的下拉框)
      *
      * @return {@code GroupedOpenApi }
-     * @author luxmixus
+     * @author luminion
      */
     @Bean
     public GroupedOpenApi empApi() {
@@ -52,7 +52,7 @@ public class DocConfig {
      * 此处的分组设置是为了在swagger-ui中显示不同的分组(右上角的下拉框)
      *
      * @return {@code GroupedOpenApi }
-     * @author luxmixus
+     * @author luminion
      */
     @Bean
     public GroupedOpenApi deptApi() {
@@ -67,7 +67,7 @@ public class DocConfig {
      * 此处设置为在左下角显示的信息
      *
      * @return {@code OpenAPI }
-     * @author luxmixus
+     * @author luminion
      */
     @Bean
     public OpenAPI docsOpenAPI() {

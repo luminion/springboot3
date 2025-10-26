@@ -9,7 +9,7 @@ import java.util.function.Function;
 /**
  * 获取天气的函数
  *
- * @author luxmixus
+ * @author luminion
  */
 @Slf4j
 public class WeatherService implements Function<WeatherService.WeatherRequest,WeatherService.WeatherResponse> {

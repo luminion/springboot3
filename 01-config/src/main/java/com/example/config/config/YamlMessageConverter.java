@@ -17,7 +17,7 @@ import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 
 /**
- * @author luxmixus
+ * @author luminion
  */
 public class YamlMessageConverter extends AbstractHttpMessageConverter<Object> {
 
@@ -39,7 +39,7 @@ public class YamlMessageConverter extends AbstractHttpMessageConverter<Object> {
      *
      * @param clazz 克拉兹
      * @return boolean
-     * @author luxmixus
+     * @author luminion
      */
     @Override
     protected boolean supports(Class<?> clazz) {
@@ -53,7 +53,7 @@ public class YamlMessageConverter extends AbstractHttpMessageConverter<Object> {
      * @param clazz        入参对象类型
      * @param inputMessage 输入消息
      * @return {@code Object }
-     * @author luxmixus
+     * @author luminion
      */
     @Override
     protected Object readInternal(Class<?> clazz, HttpInputMessage inputMessage) throws IOException, HttpMessageNotReadableException {
@@ -71,7 +71,7 @@ public class YamlMessageConverter extends AbstractHttpMessageConverter<Object> {
      *
      * @param o             出参对象
      * @param outputMessage 输出消息
-     * @author luxmixus
+     * @author luminion
      */
     @Override
     protected void writeInternal(Object o, HttpOutputMessage outputMessage) throws IOException, HttpMessageNotWritableException {

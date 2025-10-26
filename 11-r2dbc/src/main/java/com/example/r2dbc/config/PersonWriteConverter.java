@@ -9,7 +9,7 @@ import org.springframework.r2dbc.core.Parameter;
 /**
  * 使用显式转换器覆盖映射, 手动的Person写入转化器
  *
- * @author luxmixus
+ * @author luminion
  */
 @WritingConverter
 public class PersonWriteConverter implements Converter<Person, OutboundRow> {

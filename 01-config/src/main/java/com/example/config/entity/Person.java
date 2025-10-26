@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * @author luxmixus
+ * @author luminion
  */
 @Component
 @ConfigurationProperties(prefix = "person") //和配置文件person前缀的所有配置进行绑定

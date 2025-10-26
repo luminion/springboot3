@@ -11,7 +11,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 /**
  * 图片生成模型
  *
- * @author luxmixus
+ * @author luminion
  */
 @SpringBootTest
 public class Model03Image {

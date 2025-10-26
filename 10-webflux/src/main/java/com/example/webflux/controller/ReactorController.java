@@ -48,7 +48,7 @@ import java.util.List;
  | Any other argument                                                                | 所有对象都能作为参数：1、基本类型 ，等于标注@RequestParam 2、对象类型，等于标注 @ModelAttribute目标方法传参<br/>https://docs.spring.io/spring-framework/reference/6.0/web/webflux/controller/ann-methods/arguments.html<br/>Controller method argument	Description<br/>ServerWebExchange	封装了请求和响应对象的对象; 自定义获取数据、自定义响应<br/>ServerHttpRequest, ServerHttpResponse	请求、响应<br/>WebSession	访问Session对象<br/>java.security.Principal	<br/>org.springframework.http.HttpMethod	请求方式<br/>java.util.Locale	国际化<br/>java.util.TimeZone + java.time.ZoneId	时区<br/>@PathVariable	路径变量<br/>@MatrixVariable	矩阵变量<br/>@RequestParam	请求参数<br/>@RequestHeader	请求头；<br/>@CookieValue	获取Cookie<br/>@RequestBody	获取请求体，Post、文件上传<br/>HttpEntity<B>	封装后的请求对象<br/>@RequestPart	获取文件上传的数据 multipart/form-data.<br/>java.util.Map, org.springframework.ui.Model, and org.springframework.ui.ModelMap.	Map、Model、ModelMap<br/>@ModelAttribute	<br/>Errors, BindingResult	数据校验，封装错误<br/>SessionStatus + class-level @SessionAttributes	<br/>UriComponentsBuilder	For preparing a URL relative to the current request’s host, port, scheme, and context path. See URI Links.<br/>@SessionAttribute	<br/>@RequestAttribute	转发请求的请求域数据<br/>Any other argument	所有对象都能作为参数：<br/>1、基本类型 ，等于标注@RequestParam <br/>2、对象类型，等于标注 @ModelAttribute |
 
  *
- * @author luxmixus
+ * @author luminion
  */
 @RestController
 public class ReactorController {
@@ -63,7 +63,7 @@ public class ReactorController {
      * @param webSession    web会话
      * @param httpMethod    请求方式
      * @return {@link String }
-     * @author luxmixus
+     * @author luminion
      */
     @PostMapping("/test")
     public String test(@RequestParam(value = "key",required = false,defaultValue = "哈哈") String key
@@ -86,7 +86,7 @@ public class ReactorController {
      *
      * @param entity 封装了整个请求的信息
      * @return {@link Mono }<{@link ? }>
-     * @author luxmixus
+     * @author luminion
      */
     @PostMapping("/entity")
     public Mono<?> entity(HttpEntity<String> entity){
@@ -98,7 +98,7 @@ public class ReactorController {
      *
      * @param body 车身
      * @return {@link Mono }<{@link String }>
-     * @author luxmixus
+     * @author luminion
      */
     @PostMapping("/body")
     public Mono<String> body(@RequestBody String body){
@@ -113,7 +113,7 @@ public class ReactorController {
      *
      * @param file 文件,相当于原来的MultipartFile
      * @return {@link Mono }<{@link ? }>
-     * @author luxmixus
+     * @author luminion
      */
     @PostMapping("/file")
     public Mono<?> file(FilePart file){
@@ -129,7 +129,7 @@ public class ReactorController {
      * 返回单个数据Mono： Mono<Order>、User、String、Map
      *
      * @return {@link Mono }<{@link ? }>
-     * @author luxmixus
+     * @author luminion
      */
     @GetMapping("/mono")
     public Mono<?> mono(){
@@ -142,7 +142,7 @@ public class ReactorController {
      * 虽然Webflux支持原来的大多类型, 但更推荐使用Flux返回多个数据
      *
      * @return {@link Flux }<{@link ? }>
-     * @author luxmixus
+     * @author luminion
      */
     @GetMapping("/flux")
     public Flux<?> flux(){
@@ -162,7 +162,7 @@ public class ReactorController {
      *
      *
      * @return {@link Flux }<{@link ServerSentEvent }<{@link String }>>
-     * @author luxmixus
+     * @author luminion
      */
     @GetMapping(value = "/sse",produces = MediaType.TEXT_EVENT_STREAM_VALUE)
     public Flux<ServerSentEvent<String>> sse(){

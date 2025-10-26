@@ -15,7 +15,7 @@ import java.util.List;
  * 向量的配置和基础使用见:{@link com.example.ai.t20rag.r01base.Rag02Vector}
  * 
  * @see Rag02Vector
- * @author luxmixus
+ * @author luminion
  */
 @SpringBootTest
 public class Rag23Writer02Vector {

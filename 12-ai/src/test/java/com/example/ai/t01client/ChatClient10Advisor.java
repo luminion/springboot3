@@ -12,7 +12,7 @@ import org.springframework.boot.test.context.SpringBootTest;
  * <p>
  * 将 advisor 添加到链中的顺序至关重要，因为它决定了它们的执行顺序。每个 advisor 都以某种方式修改 prompt 或 context，并且一个 advisor 所做的更改将传递给链中的下一个 advisor
  *
- * @author luxmixus
+ * @author luminion
  */
 @SpringBootTest
 @Slf4j

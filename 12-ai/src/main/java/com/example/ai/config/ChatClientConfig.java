@@ -20,7 +20,7 @@ import org.springframework.context.annotation.Configuration;
  * 系统默认没有配置ChatClient
  * 需要自己配置bean
  *
- * @author luxmixus
+ * @author luminion
  */
 @Slf4j
 @Configuration(proxyBeanMethods = false)

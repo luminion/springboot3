@@ -18,7 +18,7 @@ import java.util.List;
  * <p>
  * MultiQueryExpander 多查询扩展器
  *
- * @author luxmixus
+ * @author luminion
  */
 @SpringBootTest
 public class Rag11PreRetrieval02QueryExpander {

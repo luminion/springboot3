@@ -11,7 +11,7 @@ import org.springframework.context.ApplicationEvent;
  * 2.编写有参构造器，入参指定为自己所需要的类型参数
  * 3.编写Listener监听器，监听自定义类型的事件
  *
- * @author luxmixus
+ * @author luminion
  */
 public class LoginEvent extends ApplicationEvent {
 

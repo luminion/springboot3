@@ -12,7 +12,7 @@ import java.util.concurrent.TimeUnit;
  * 使用之前需要添加@EnableR2dbcRepositories开启该功能
  * 并创建自己的接口继承ReactiveCrudRepository,指定实体类和主键类型
  *
- * @author luxmixus
+ * @author luminion
  */
 @SpringBootTest
 public class T04RepositoryTest {
@@ -25,7 +25,7 @@ public class T04RepositoryTest {
     /**
      * 查询所有
      *
-     * @author luxmixus
+     * @author luminion
      */
     @Test
     void readsAllEntitiesCorrectly() throws InterruptedException {
@@ -39,7 +39,7 @@ public class T04RepositoryTest {
     /**
      * 根据名称查询
      *
-     * @author luxmixus
+     * @author luminion
      */
     @Test
     void readsEntitiesByNameCorrectly() throws InterruptedException{

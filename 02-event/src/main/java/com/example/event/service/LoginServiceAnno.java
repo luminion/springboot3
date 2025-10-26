@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 
 /**
  * 通过@EventListener注解实现事件监听
- * @author luxmixus
+ * @author luminion
  */
 @Service
 @Slf4j

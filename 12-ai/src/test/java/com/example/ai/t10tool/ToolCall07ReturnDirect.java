@@ -20,7 +20,7 @@ import org.springframework.util.ReflectionUtils;
  * 每个 ToolCallback 实现都可以定义是应将工具调用的结果直接返回给调用方还是发送回模型。默认情况下，结果将发送回模型。但是，您可以按工具更改此行为
  * 负责管理工具执行生命周期的 ToolCallingManager 负责处理与工具关联的 returnDirect 属性。
  * 如果该属性设置为 true，则工具调用的结果将直接返回给调用方。否则，结果将发送回模型
- * @author luxmixus
+ * @author luminion
  */
 @SpringBootTest
 public class ToolCall07ReturnDirect {

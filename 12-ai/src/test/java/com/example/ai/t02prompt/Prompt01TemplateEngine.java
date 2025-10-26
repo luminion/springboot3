@@ -35,7 +35,7 @@ import java.util.Map;
  * Tool/Function Role:
  * 工具/功能角色 侧重于返回其他信息以响应工具调用助手消息
  *
- * @author luxmixus
+ * @author luminion
  */
 @SpringBootTest
 public class Prompt01TemplateEngine {

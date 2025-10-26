@@ -7,7 +7,7 @@ import reactor.core.publisher.Mono;
 /**
  * 气象接口
  *
- * @author luxmixus
+ * @author luminion
  */
 
 public interface WeatherApi {
@@ -21,7 +21,7 @@ public interface WeatherApi {
      * 当@RequestParam指定为city时，对外调用接口时传递出去的是city参数
      * @param city 城市
      * @return {@code Mono<String> }
-     * @author luxmixus
+     * @author luminion
      */
     @GetExchange(url = "https://ali-weather.showapi.com/area-to-weather-date",accept = "application/json")
     Mono<String> queryWeather(@RequestParam("area") String city);
